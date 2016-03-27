@@ -1,0 +1,275 @@
+directive sample 3.0 300
+directive simulation deterministic
+directive plot ahi; bhi; chi; alo; blo; clo
+
+rate rt = 1.0;
+ 
+ // C ELEMENTS
+ //AM SWITCH 1
+  init adtup 0.0
+| init adtnt 0.0
+| init adtdn 10.0
+
+| init adthi 0.0
+| init adtmid  0.0
+| init adtlo 10.0
+
+| init adfup 0.0
+| init adfnt 0.0
+| init adfdn 10.0
+
+| init adfhi 0.0
+| init adfmid 0.0
+| init adflo 10.0
+
+//pulleys
+| init ae 10.0
+| init aw 10.0
+| init aq 0.0
+
+//outputs
+| init alo 0.0
+| init ahi 0.0
+
+| init aNotUp 10.0
+| init aNotDown 0.0
+
+
+//AM SWITCH 2
+| init bdtup 0.0
+| init bdtnt 0.0
+| init bdtdn 10.0
+
+| init bdthi 0.0
+| init bdtmid 0.0
+| init bdtlo 10.0
+
+| init bdfup 0.0
+| init bdfnt 0.0
+| init bdfdn 10.0
+
+| init bdfhi 0.0
+| init bdfmid  0.0
+| init bdflo 10.0
+
+//pulleys
+| init be 10.0
+| init bw 10.0
+| init bq 0.0
+
+//outputs
+| init blo 0.0
+| init bhi 0.0
+
+| init bNotUp 10.0
+| init bNotDown 0.0
+
+//AM SWITCH 3
+| init cdtup 0.0
+| init cdtnt 0.0
+| init cdtdn 10.0
+
+| init cdthi 0.0
+| init cdtmid  0.0
+| init cdtlo 10.0
+
+| init cdfup 0.0
+| init cdfnt 0.0
+| init cdfdn 10.0
+
+| init cdfhi 0.0
+| init bdfmid  0.0
+| init cdflo 10.0
+
+//pulleys
+| init ce 10.0
+| init cw 10.0
+| init cq 0.0
+
+//outputs
+| init clo 0.0
+| init chi 0.0
+
+| init cNotUp 10.0
+| init cNotDown 0.0 
+
+
+//INPUTS 
+| init reqthi 0.0 
+| init reqtlo 10.0
+| init reqfhi 0.0 
+| init reqflo 10.0
+
+
+
+//AREA 1 
+| adfdn + adfup ->{rt} adfnt + adfnt
+| adfnt + adfdn ->{rt} adfdn + adfdn
+| adfnt + adfup ->{rt} adfup + adfup
+ 
+| adfdn + bNotUp ->{rt} adfnt + bNotUp
+| adfnt + reqfhi ->{rt} adfup + reqfhi
+| adfup + bNotDown->{rt} adfnt + bNotDown
+| adfnt + reqflo ->{rt} adfdn + reqflo
+
+| adflo + adfhi ->{rt} adfmid + adfmid
+| adfmid + adflo ->{rt} adflo + adflo
+| adfmid + adfhi ->{rt} adfhi + adfhi
+ 
+| adflo + adfup ->{rt} adfmid + adfup
+| adfmid + adfup ->{rt} adfhi + adfup
+| adfhi + adfdn ->{rt} adfmid + adfdn
+| adfmid + adfdn ->{rt} adflo + adfdn
+
+
+| adtdn + adtup ->{rt} adtnt + adtnt
+| adtnt + adtdn ->{rt} adtdn + adtdn
+| adtnt + adtup ->{rt} adtup + adtup
+ 
+| adtdn + bNotUp ->{rt} adtnt + bNotUp
+| adtnt + reqthi ->{rt} adtup + reqthi
+| adtup + bNotDown->{rt} adtnt + bNotDown
+| adtnt + reqtlo ->{rt} adtdn + reqtlo
+ 
+| adtlo + adthi ->{rt} adtmid + adtmid
+| adtmid + adtlo ->{rt} adtlo + adtlo
+| adtmid + adthi ->{rt} adthi + adthi
+ 
+| adtlo + adtup ->{rt} adtmid + adtup
+| adtmid + adtup ->{rt} adthi + adtup
+| adthi + adtdn ->{rt} adtmid + adtdn
+| adtmid + adtdn ->{rt} adtlo + adtdn
+
+//reactions
+| adthi + ae ->{rt} adthi + ahi
+| adfhi + ae ->{rt} adfhi + ahi
+
+| adtlo + aw ->{rt} adtlo + aq
+| adflo + aq ->{rt} adflo + alo
+
+
+//for persistance
+
+|alo + adthi ->{rt} aw + adthi
+|alo + adfhi ->{rt} aq + adfhi
+
+|alo + ahi ->{rt} alo + ae
+
+| aiflo + aNotDown ->{rt} aiflo + aNotUp
+| aifhi + aNotUp ->{rt} aifhi + aNotDown
+
+
+//AREA 2
+| bdfdn + bdfup ->{rt} bdfnt + bdfnt
+| bdfnt + bdfdn ->{rt} bdfdn + bdfdn
+| bdfnt + bdfup ->{rt} bdfup + bdfup
+ 
+| bdfdn + cNotUp ->{rt} bdfnt + cNotUp
+| bdfnt + adfhi ->{rt} bdfup + adfhi
+| bdfup + cNotDown->{rt} bdfnt + cNotDown
+| bdfnt + adflo ->{rt} bdfdn + adflo
+ 
+| bdflo + bdfhi ->{rt} bdfmid + bdfmid
+| bdfmid + bdflo ->{rt} bdflo + bdflo
+| bdfmid + bdfhi ->{rt} bdfhi + bdfhi
+ 
+| bdflo + bdfup ->{rt} bdfmid + bdfup
+| bdfmid + bdfup ->{rt} bdfhi + bdfup
+| bdfhi + bdfdn ->{rt} bdfmid + bdfdn
+| bdfmid + bdfdn ->{rt} bdflo + bdfdn
+
+| bdtdn + bdtup ->{rt} bdtnt + bdtnt
+| bdtnt + bdtdn ->{rt} bdtdn + bdtdn
+| bdtnt + bdtup ->{rt} bdtup + bdtup
+ 
+| bdtdn + cNotUp ->{rt} bdtnt + cNotUp
+| bdtnt + adthi ->{rt} bdtup + adthi
+| bdtup + cNotDown->{rt} bdtnt + cNotDown
+| bdtnt + adtlo ->{rt} bdtdn + adtlo
+ 
+| bdtlo + bdthi ->{rt} bdtmid + bdtmid
+| bdtmid + bdtlo ->{rt} bdtlo + bdtlo
+| bdtmid + bdthi ->{rt} bdthi + bdthi
+ 
+| bdtlo + bdtup ->{rt} bdtmid + bdtup
+| bdtmid + bdtup ->{rt} bdthi + bdtup
+| bdthi + bdtdn ->{rt} bdtmid + bdtdn
+| bdtmid + bdtdn ->{rt} bdtlo + bdtdn
+
+//reactions
+| bdthi + be ->{rt} bdthi + bhi
+| bdfhi + be ->{rt} bdfhi + bhi
+
+| bdtlo + bw ->{rt} bdtlo + bq
+| bdflo + bq ->{rt} bdflo + blo
+
+
+//for persistance
+
+|blo + bdthi ->{rt} bw + bdthi
+|blo + bdfhi ->{rt} bq + bdfhi
+
+|blo + bhi ->{rt} blo + be
+
+| biflo + bNotDown ->{rt} biflo + bNotUp
+| bifhi + bNotUp ->{rt} bifhi + bNotDown
+
+//AREA 3
+| cdfdn + cdfup ->{rt} cdfnt + cdfnt
+| cdfnt + cdfdn ->{rt} cdfdn + cdfdn
+| cdfnt + cdfup ->{rt} cdfup + cdfup
+ 
+| cdfdn + cNotUp ->{rt} cdfnt + cNotUp
+| cdfnt + bdfhi ->{rt} cdfup + bdfhi
+| cdfup + cNotDown->{rt} cdfnt + cNotDown
+| cdfnt + bdflo ->{rt} cdfdn + bdflo
+ 
+| cdflo + cdfhi ->{rt} cdfmid + cdfmid
+| cdfmid + cdflo ->{rt} cdflo + cdflo
+| cdfmid + cdfhi ->{rt} cdfhi + cdfhi
+ 
+| cdflo + cdfup ->{rt} cdfmid + cdfup
+| cdfmid + cdfup ->{rt} cdfhi + cdfup
+| cdfhi + cdfdn ->{rt} cdfmid + cdfdn
+| cdfmid + cdfdn ->{rt} cdflo + cdfdn
+
+
+| cdtdn + cdtup ->{rt} cdtnt + cdtnt
+| cdtnt + cdtdn ->{rt} cdtdn + cdtdn
+| cdtnt + cdtup ->{rt} cdtup + cdtup
+ 
+| cdtdn + cNotUp ->{rt} cdtnt + cNotUp
+| cdtnt + bdthi ->{rt} cdtup + bdthi
+| cdtup + bNotDown->{rt} cdtnt + cNotDown
+| cdtnt + bdtlo ->{rt} cdtdn + bdtlo
+ 
+| cdtlo + cdthi ->{rt} cdtmid + cdtmid
+| cdtmid + cdtlo ->{rt} cdtlo + cdtlo
+| cdtmid + cdthi ->{rt} cdthi + cdthi
+ 
+| cdtlo + cdtup ->{rt} cdtmid + cdtup
+| cdtmid + cdtup ->{rt} cdthi + cdtup
+| cdthi + cdtdn ->{rt} cdtmid + cdtdn
+| cdtmid + cdtdn ->{rt} cdtlo + cdtdn
+
+
+//reactions
+| cdthi + ce ->{rt} cdthi + chi
+| cdfhi + ce ->{rt} cdfhi + chi
+
+| cdtlo + cw ->{rt} cdtlo + cq
+| cdflo + cq ->{rt} cdflo + clo
+
+
+//for persistance
+
+|clo + cdthi ->{rt} cw + cdthi
+|clo + cdfhi ->{rt} cq + cdfhi
+
+|clo + chi ->{rt} clo + ce
+
+| ciflo + cNotDown ->{rt} ciflo + cNotUp
+| cifhi + cNotUp ->{rt} cifhi + cNotDown
+
+| chi + reqhi ->{rt} chi + reqlo
+| clo + reqlo ->{rt} clo + reqhi

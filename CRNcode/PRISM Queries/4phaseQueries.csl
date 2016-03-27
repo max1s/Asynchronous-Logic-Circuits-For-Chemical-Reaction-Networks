@@ -1,0 +1,8 @@
+const int Th;
+
+P=? [ (s_id35<Th) U<=3 (s_id22>=Th) ]
+
+P=? [ (s_id35<Th) U<=3 (s_id24>=Th) ]
+
+P=?[true U<=10 (s_id52>=Th)]
+

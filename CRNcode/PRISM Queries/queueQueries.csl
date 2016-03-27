@@ -1,10 +1,10 @@
 const int Th;
 
-P=?[(s_id58<Th) U<=3 (s_id48<Th)]
+P=? [ (s_id58<Th) U<=5 (s_id48>=Th) ]
 
-P=?[(s_id58<Th) U<=3 (s_id44<Th)]
+P=? [ (s_id58<Th) U<=5 (s_id44>=Th) ]
 
-P=?[(s_id44<Th) U<=3 (s_id12<Th)]
+P=? [ (s_id44<Th) U<=5 (s_id12>=Th) ]
 
-P=?[true U<=10 (s_id67 >= Th)]
+P=? [ true U<=10 (s_id67>=Th) ]
 
