@@ -1,0 +1,150 @@
+directive sample 10.0 100
+directive simulation deterministic
+directive plot xorOneHi; asOneOut; acOneOut; asZeroOut
+rate rt = 1.0;
+
+//inputs
+  init aaOneIn 0.0
+| init aaZeroIn 10.0
+
+| init abOneIn 10.0
+| init abZeroIn 0.0
+
+| init acOneIn 10.0
+| init acZeroIn 0.0
+
+| init asOneOut 0.0
+| init asZeroOut 0.0
+
+| init acOneOut 0.0
+| init acZeroOut 0.0
+
+//X0R1
+| init axorOnelOne 0.0
+| init axorOnelTwo 10.0
+| init axorOnelThree 10.0
+| init axorOnelFour 0.0
+| init axorOneHi 0.0
+| init axorOneLo 0.0
+
+//XOR2
+
+| init axorTwolOne 0.0
+| init axorTwolTwo 10.0
+| init axorTwolThree 10.0
+| init axorTwolFour 0.0
+
+//AND1
+| init aandOnelq	0.0
+| init aandOnelw 10.0
+| init aandOnele 10.0
+| init aandOneHi 0.0
+| init aandOneLo 0.0
+
+//AND2
+| init aandTwole 0.0
+| init aandTwolw 10.0
+| init aandTwolq 10.0
+| init aandTwoHi 0.0
+| init aandTwoLo 0.0
+
+//OR1
+| init aorle 10.0
+| init aorlw 10.0
+| init aorlq 0.0
+
+
+//XOR1
+//reactions
+| aaOneIn + axorOnelFour  ->{rt} aaOneIn +  axorOneHi
+| abOneIn + axorOnelFour ->{rt}  abOneIn +  axorOneHi
+
+| aaZeroIn + axorOnelThree ->{rt} aaZeroIn + axorOnelFour
+| abZeroIn + axorOnelThree ->{rt} abZeroIn + axorOnelFour
+
+| aaOneIn + axorOnelTwo ->{rt} aaOneIn + axorOnelOne 
+| abZeroIn + axorOnelTwo ->{rt} abZeroIn + axorOnelOne
+
+| abOneIn + axorOnelOne ->{rt} abOneIn + axorOneLo
+| aaZeroIn + axorOnelOne ->{rt} aaZeroIn + axorOneLo
+
+
+//for persistance
+
+| axorOneLo + axorOnelFour ->{rt} axorOneLo + axorOnelThree
+| axorOneLo + axorOneHi ->{rt} axorOneLo + axorOnelFour
+
+| axorOneHi + axorOnelOne->{rt} axorOneHi + axorOnelTwo
+| axorOneHi + axorOneLo ->{rt} axorOneHi + axorOnelOne
+
+
+//XOR2
+| axorOneHi + axorTwolFour  ->{rt} axorOneHi +  asOneOut
+| acOneIn + axorTwolFour ->{rt}  acOneIn +  asOneOut
+
+| axorOneLo + axorTwolThree ->{rt} axorOneLo + axorTwolFour
+| acZeroIn + axorTwolThree ->{rt} acZeroIn + axorTwolFour
+
+| axorOneHi + axorTwolTwo ->{rt} axorOneHi + axorTwolOne 
+| acZeroIn + axorTwolTwo ->{rt} acZeroIn + axorTwolOne
+
+| acOneIn + axorTwolOne ->{rt} acOneIn + asZeroOut
+| axorOneLo + axorTwolOne ->{rt} axorOneLo + asZeroOut
+
+
+//for persistance
+
+| asZeroOut + axorTwolFour ->{rt} asZeroOut + axorTwolThree
+| asZeroOut + asOneOut ->{rt} asZeroOut + axorTwolFour
+
+| asOneOut + asZeroOut ->{rt} asOneOut + axorTwolTwo
+| asOneOut + asZeroOut ->{rt} asOneOut + asZeroOut
+
+
+//AND1
+//reactions
+
+|aaOneIn + aandOnelq ->{rt} aaOneIn + aandOneHi
+|abOneIn + aandOnelw ->{rt} abOneIn + aandOnelq
+
+|aaZeroIn + aandOnele ->{rt} aaZeroIn + aandOneLo
+|abZeroIn + aandOnele ->{rt} abZeroIn + aandOneLo
+
+//for persistance
+
+| aandOneHi + aaZeroIn ->{rt} aandOnelq + aaZeroIn
+| aandOneHi + abZeroIn ->{rt} aandOnelw + abZeroIn
+
+| aandOneLo + aandOneHi ->{rt} aandOneHi + aandOnele
+
+//AND2
+
+//reactions
+
+|acOneIn + aandTwole ->{rt} acOneIn + aandTwoHi
+|axorOneHi + aandTwolw ->{rt} axorOneHi + aandTwole
+
+|acZeroIn + aandTwolq ->{rt} acZeroIn + aandTwoLo
+|axorOneLo + aandTwolq ->{rt} axorOneLo + aandTwoLo
+
+//for persistance
+
+|aandTwoHi + acZeroIn ->{rt} aandTwole + acZeroIn
+|aandTwoHi + axorOneLo ->{rt} aandTwolw + axorOneLo
+
+|aandTwoLo + aandTwoHi ->{rt} aandTwoHi + aandTwolq
+
+
+//OR
+
+| aandOneHi + aorle ->{rt} aandOneHi + acOneOut
+| aandTwoHi + aorle ->{rt} aandTwoHi + acOneOut
+
+| aandOneLo + aorlw ->{rt} aandOneLo + aorlq
+| aandTwoLo + aorlq ->{rt} aandTwoLo + acZeroOut
+
+
+//for persistance
+| acZeroOut + aandOneHi ->{rt} aorlw + aandOneHi
+| acZeroOut + aandTwoHi ->{rt} aorlq + aandTwoHi
+| acZeroOut + aacOneOut ->{rt} acZeroOut + aorle

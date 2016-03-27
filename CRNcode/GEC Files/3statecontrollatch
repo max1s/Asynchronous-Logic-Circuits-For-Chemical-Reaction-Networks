@@ -1,0 +1,54 @@
+directive sample 10.0 100
+directive simulation deterministic
+ 
+rate rt = 1.0;
+ 
+
+ init ymid 10.0
+| init ylo 0.0
+| init yhi 0.0
+| init sOne 10.0
+| init sTwo 0.0
+| init sThree 10.0
+| init sFour 0.0
+| init slo 0.0
+
+//INPUTS 
+| init xhi 0.0
+| init xlo 0.0
+| init rhi 0.0
+| init rlo 0.0
+
+| init chi 0.0
+| init clo 0.0
+
+//OUTPUTS
+| init shi 0.0
+| init slo 0.0
+
+| yhi + ymid ->{rt} yhi + yhi
+| ylo + ymid ->{rt} ylo + ylo
+
+| xhi + ylo ->{rt} xhi + ymid
+| xhi + ymid ->{rt} xhi + yhi 
+| xlo + yhi ->{rt} xlo + ymid
+| xlo + ymid ->{rt} xlo + ylo
+
+| rhi + yhi ->{rt} rlo + ymid
+| rhi + ylo ->{rt} rlo + ymid
+
+| yhi + sOne ->{rt} yhi + sTwo
+| chi + sTwo ->{rt} chi + shi
+| clo + shi ->{rt} clo + sTwo
+| ymid + sTwo ->{rt} ymid + sOne
+| ylo + sTwo ->{rt} ylo + sOne
+| ymid + shi ->{rt} ymid + sOne
+| ylo + shi ->{rt} ylo + sOne
+
+| ylo + sThree ->{rt} ylo + sFour
+| chi + sFour ->{rt} chi + slo
+| clo + slo ->{rt} clo + sFour
+| ymid + slo ->{rt}  ymid + sFour
+| yhi + slo ->{rt} yhi + sFour
+| ymid + sFour ->{rt} ymid + sThree
+| yhi + sFour ->{rt} ymid + sThree

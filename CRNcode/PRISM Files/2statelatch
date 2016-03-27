@@ -1,0 +1,103 @@
+ctmc
+
+const int MAX_AMOUNT = 100;
+
+// Parameters for reaction r_id4
+const double k_r_id4 = 1.0;
+
+// Parameters for reaction r_id5
+const double k_r_id5 = 1.0;
+
+// Parameters for reaction r_id6
+const double k_r_id6 = 1.0;
+
+// Parameters for reaction r_id7
+const double k_r_id7 = 1.0;
+
+// Species s_id0 (ylo)
+const int s_id0_MIN = 0;
+const int s_id0_MAX = MAX_AMOUNT;
+module s_id0
+
+    s_id0 : [s_id0_MIN..s_id0_MAX] init 10; // Initial amount 10
+
+    // r_id4
+    [r_id4] s_id0 > 0 -> (s_id0'=s_id0-1);
+    // r_id5
+    [r_id5] s_id0 <= s_id0_MAX-1 -> (s_id0'=s_id0+1);
+    // r_id6
+    [r_id6] s_id0 > 0 -> (s_id0'=s_id0-1);
+    // r_id7
+    [r_id7] s_id0 <= s_id0_MAX-1 -> (s_id0'=s_id0+1);
+
+endmodule
+
+// Species s_id1 (yhi)
+const int s_id1_MIN = 0;
+const int s_id1_MAX = MAX_AMOUNT;
+module s_id1
+
+    s_id1 : [s_id1_MIN..s_id1_MAX] init 0; // Initial amount 0
+
+    // r_id4
+    [r_id4] s_id1 <= s_id1_MAX-1 -> (s_id1'=s_id1+1);
+    // r_id5
+    [r_id5] s_id1 > 0 -> (s_id1'=s_id1-1);
+    // r_id6
+    [r_id6] s_id1 <= s_id1_MAX-1 -> (s_id1'=s_id1+1);
+    // r_id7
+    [r_id7] s_id1 > 0 -> (s_id1'=s_id1-1);
+
+endmodule
+
+// Species s_id2 (xhi)
+const int s_id2_MIN = 0;
+const int s_id2_MAX = MAX_AMOUNT;
+module s_id2
+
+    s_id2 : [s_id2_MIN..s_id2_MAX] init 10; // Initial amount 10
+
+    // r_id6
+    [r_id6] s_id2 > 0 -> (s_id2'=s_id2-0);
+
+endmodule
+
+// Species s_id3 (xlo)
+const int s_id3_MIN = 0;
+const int s_id3_MAX = MAX_AMOUNT;
+module s_id3
+
+    s_id3 : [s_id3_MIN..s_id3_MAX] init 0; // Initial amount 0
+
+    // r_id7
+    [r_id7] s_id3 > 0 -> (s_id3'=s_id3-0);
+
+endmodule
+
+// Reaction rates
+module reaction_rates
+
+    // r_id4
+    [r_id4] (k_r_id4*s_id1*s_id0) > 0 -> (k_r_id4*s_id1*s_id0) : true;
+    // r_id5
+    [r_id5] (k_r_id5*s_id0*s_id1) > 0 -> (k_r_id5*s_id0*s_id1) : true;
+    // r_id6
+    [r_id6] (k_r_id6*s_id2*s_id0) > 0 -> (k_r_id6*s_id2*s_id0) : true;
+    // r_id7
+    [r_id7] (k_r_id7*s_id3*s_id1)  > 0 -> (k_r_id7*s_id3*s_id1) : true;
+
+endmodule
+
+// Reward structures (one per species)
+
+// Species s_id0 (ylo)
+rewards "s_id0" true : s_id0; endrewards
+// Species s_id1 (yhi)
+rewards "s_id1" true : s_id1; endrewards
+// Species s_id2 (xhi)
+rewards "s_id2" true : s_id2; endrewards
+// Species s_id3 (xlo)
+rewards "s_id3" true : s_id3; endrewards
+
+// Reward structure for calculating expected times
+rewards "time" true : 1; endrewards

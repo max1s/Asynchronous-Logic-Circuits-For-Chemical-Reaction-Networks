@@ -1,0 +1,38 @@
+directive sample 10.0 100
+directive simulation deterministic
+
+rate rt = 1.0;
+
+//inputs
+  init xlo 10.0
+| init xhi 0.0
+| init ylo 0.0
+| init yhi 10.0
+
+//pulleys
+| init zq 0.0
+| init zw 10.0
+| init ze 10.0
+| init zr 0.0
+//outputs
+| init zlo 0.0
+| init zhi 0.0
+
+//Reactions
+| ylo + zw ->{rt} ylo + zq
+| xlo + zw ->{rt} xlo + zq
+| xhi + zq ->{rt} xhi + zhi
+| yhi + zq ->{rt} yhi + zhi
+
+|xhi + ze ->{rt} xhi + zr
+|ylo + ze ->{rt} ylo + zr
+|yhi + zr ->{rt} yhi + zlo
+|xlo + zr ->{rt} xlo + zlo
+
+//for persistance
+
+|zhi + zlo ->{rt} zhi + zr
+|zhi + zr ->{rt} zhi +ze
+| zlo + zhi ->{rt} zlo + zq
+| zlo + zq ->{rt} zlo + zw
+

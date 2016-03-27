@@ -1,0 +1,1176 @@
+ctmc
+
+const int MAX_AMOUNT = 100;
+
+// Parameters for reaction r_id37
+const double k_r_id37 = 1.0;
+
+// Parameters for reaction r_id38
+const double k_r_id38 = 1.0;
+
+// Parameters for reaction r_id39
+const double k_r_id39 = 1.0;
+
+// Parameters for reaction r_id40
+const double k_r_id40 = 1.0;
+
+// Parameters for reaction r_id41
+const double k_r_id41 = 1.0;
+
+// Parameters for reaction r_id42
+const double k_r_id42 = 1.0;
+
+// Parameters for reaction r_id43
+const double k_r_id43 = 1.0;
+
+// Parameters for reaction r_id44
+const double k_r_id44 = 1.0;
+
+// Parameters for reaction r_id45
+const double k_r_id45 = 1.0;
+
+// Parameters for reaction r_id46
+const double k_r_id46 = 1.0;
+
+// Parameters for reaction r_id47
+const double k_r_id47 = 1.0;
+
+// Parameters for reaction r_id48
+const double k_r_id48 = 1.0;
+
+// Parameters for reaction r_id49
+const double k_r_id49 = 1.0;
+
+// Parameters for reaction r_id50
+const double k_r_id50 = 1.0;
+
+// Parameters for reaction r_id51
+const double k_r_id51 = 1.0;
+
+// Parameters for reaction r_id52
+const double k_r_id52 = 1.0;
+
+// Parameters for reaction r_id53
+const double k_r_id53 = 1.0;
+
+// Parameters for reaction r_id54
+const double k_r_id54 = 1.0;
+
+// Parameters for reaction r_id55
+const double k_r_id55 = 1.0;
+
+// Parameters for reaction r_id56
+const double k_r_id56 = 1.0;
+
+// Parameters for reaction r_id57
+const double k_r_id57 = 1.0;
+
+// Parameters for reaction r_id58
+const double k_r_id58 = 1.0;
+
+// Parameters for reaction r_id59
+const double k_r_id59 = 1.0;
+
+// Parameters for reaction r_id60
+const double k_r_id60 = 1.0;
+
+// Parameters for reaction r_id61
+const double k_r_id61 = 1.0;
+
+// Parameters for reaction r_id62
+const double k_r_id62 = 1.0;
+
+// Parameters for reaction r_id63
+const double k_r_id63 = 1.0;
+
+// Parameters for reaction r_id64
+const double k_r_id64 = 1.0;
+
+// Parameters for reaction r_id65
+const double k_r_id65 = 1.0;
+
+// Parameters for reaction r_id66
+const double k_r_id66 = 1.0;
+
+// Parameters for reaction r_id67
+const double k_r_id67 = 1.0;
+
+// Parameters for reaction r_id68
+const double k_r_id68 = 1.0;
+
+// Parameters for reaction r_id69
+const double k_r_id69 = 1.0;
+
+// Parameters for reaction r_id70
+const double k_r_id70 = 1.0;
+
+// Parameters for reaction r_id71
+const double k_r_id71 = 1.0;
+
+// Parameters for reaction r_id72
+const double k_r_id72 = 1.0;
+
+// Parameters for reaction r_id73
+const double k_r_id73 = 1.0;
+
+// Parameters for reaction r_id74
+const double k_r_id74 = 1.0;
+
+// Parameters for reaction r_id75
+const double k_r_id75 = 1.0;
+
+// Parameters for reaction r_id76
+const double k_r_id76 = 1.0;
+
+// Parameters for reaction r_id77
+const double k_r_id77 = 1.0;
+
+// Parameters for reaction r_id78
+const double k_r_id78 = 1.0;
+
+// Parameters for reaction r_id79
+const double k_r_id79 = 1.0;
+
+// Parameters for reaction r_id80
+const double k_r_id80 = 1.0;
+
+// Parameters for reaction r_id81
+const double k_r_id81 = 1.0;
+
+// Parameters for reaction r_id82
+const double k_r_id82 = 1.0;
+
+// Parameters for reaction r_id83
+const double k_r_id83 = 1.0;
+
+// Parameters for reaction r_id84
+const double k_r_id84 = 1.0;
+
+// Parameters for reaction r_id85
+const double k_r_id85 = 1.0;
+
+// Parameters for reaction r_id86
+const double k_r_id86 = 1.0;
+
+// Parameters for reaction r_id87
+const double k_r_id87 = 1.0;
+
+// Parameters for reaction r_id88
+const double k_r_id88 = 1.0;
+
+// Parameters for reaction r_id89
+const double k_r_id89 = 1.0;
+
+// Parameters for reaction r_id90
+const double k_r_id90 = 1.0;
+
+// Parameters for reaction r_id91
+const double k_r_id91 = 1.0;
+
+// Parameters for reaction r_id92
+const double k_r_id92 = 1.0;
+
+// Parameters for reaction r_id93
+const double k_r_id93 = 1.0;
+
+// Parameters for reaction r_id94
+const double k_r_id94 = 1.0;
+
+// Parameters for reaction r_id95
+const double k_r_id95 = 1.0;
+
+// Parameters for reaction r_id96
+const double k_r_id96 = 1.0;
+
+// Parameters for reaction r_id97
+const double k_r_id97 = 1.0;
+
+// Parameters for reaction r_id98
+const double k_r_id98 = 1.0;
+
+// Parameters for reaction r_id99
+const double k_r_id99 = 1.0;
+
+// Parameters for reaction r_id100
+const double k_r_id100 = 1.0;
+
+// Parameters for reaction r_id101
+const double k_r_id101 = 1.0;
+
+// Parameters for reaction r_id102
+const double k_r_id102 = 1.0;
+
+// Parameters for reaction r_id103
+const double k_r_id103 = 1.0;
+
+// Parameters for reaction r_id104
+const double k_r_id104 = 1.0;
+
+// Species s_id0 (aup)
+const int s_id0_MIN = 0;
+const int s_id0_MAX = MAX_AMOUNT;
+module s_id0
+
+    s_id0 : [s_id0_MIN..s_id0_MAX] init 0; // Initial amount 0
+
+    // r_id37
+    [r_id37] s_id0 > 0 -> (s_id0'=s_id0-1);
+    // r_id39
+    [r_id39] s_id0 <= s_id0_MAX-1 -> (s_id0'=s_id0+1);
+    // r_id41
+    [r_id41] s_id0 <= s_id0_MAX-1 -> (s_id0'=s_id0+1);
+    // r_id42
+    [r_id42] s_id0 > 0 -> (s_id0'=s_id0-1);
+    // r_id49
+    [r_id49] s_id0 > 0 -> (s_id0'=s_id0-0);
+    // r_id50
+    [r_id50] s_id0 > 0 -> (s_id0'=s_id0-0);
+
+endmodule
+
+// Species s_id1 (ant)
+const int s_id1_MIN = 0;
+const int s_id1_MAX = MAX_AMOUNT;
+module s_id1
+
+    s_id1 : [s_id1_MIN..s_id1_MAX] init 0; // Initial amount 0
+
+    // r_id37
+    [r_id37] s_id1 <= s_id1_MAX-2 -> (s_id1'=s_id1+2);
+    // r_id38
+    [r_id38] s_id1 > 0 -> (s_id1'=s_id1-1);
+    // r_id39
+    [r_id39] s_id1 > 0 -> (s_id1'=s_id1-1);
+    // r_id40
+    [r_id40] s_id1 <= s_id1_MAX-1 -> (s_id1'=s_id1+1);
+    // r_id41
+    [r_id41] s_id1 > 0 -> (s_id1'=s_id1-1);
+    // r_id42
+    [r_id42] s_id1 <= s_id1_MAX-1 -> (s_id1'=s_id1+1);
+    // r_id43
+    [r_id43] s_id1 > 0 -> (s_id1'=s_id1-1);
+
+endmodule
+
+// Species s_id2 (adn)
+const int s_id2_MIN = 0;
+const int s_id2_MAX = MAX_AMOUNT;
+module s_id2
+
+    s_id2 : [s_id2_MIN..s_id2_MAX] init 10; // Initial amount 10
+
+    // r_id37
+    [r_id37] s_id2 > 0 -> (s_id2'=s_id2-1);
+    // r_id38
+    [r_id38] s_id2 <= s_id2_MAX-1 -> (s_id2'=s_id2+1);
+    // r_id40
+    [r_id40] s_id2 > 0 -> (s_id2'=s_id2-1);
+    // r_id43
+    [r_id43] s_id2 <= s_id2_MAX-1 -> (s_id2'=s_id2+1);
+    // r_id47
+    [r_id47] s_id2 > 0 -> (s_id2'=s_id2-0);
+    // r_id48
+    [r_id48] s_id2 > 0 -> (s_id2'=s_id2-0);
+
+endmodule
+
+// Species s_id3 (bup)
+const int s_id3_MIN = 0;
+const int s_id3_MAX = MAX_AMOUNT;
+module s_id3
+
+    s_id3 : [s_id3_MIN..s_id3_MAX] init 0; // Initial amount 0
+
+    // r_id51
+    [r_id51] s_id3 > 0 -> (s_id3'=s_id3-1);
+    // r_id53
+    [r_id53] s_id3 <= s_id3_MAX-1 -> (s_id3'=s_id3+1);
+    // r_id55
+    [r_id55] s_id3 <= s_id3_MAX-1 -> (s_id3'=s_id3+1);
+    // r_id56
+    [r_id56] s_id3 > 0 -> (s_id3'=s_id3-1);
+    // r_id63
+    [r_id63] s_id3 > 0 -> (s_id3'=s_id3-0);
+    // r_id64
+    [r_id64] s_id3 > 0 -> (s_id3'=s_id3-0);
+
+endmodule
+
+// Species s_id4 (bnt)
+const int s_id4_MIN = 0;
+const int s_id4_MAX = MAX_AMOUNT;
+module s_id4
+
+    s_id4 : [s_id4_MIN..s_id4_MAX] init 0; // Initial amount 0
+
+    // r_id51
+    [r_id51] s_id4 <= s_id4_MAX-2 -> (s_id4'=s_id4+2);
+    // r_id52
+    [r_id52] s_id4 > 0 -> (s_id4'=s_id4-1);
+    // r_id53
+    [r_id53] s_id4 > 0 -> (s_id4'=s_id4-1);
+    // r_id54
+    [r_id54] s_id4 <= s_id4_MAX-1 -> (s_id4'=s_id4+1);
+    // r_id55
+    [r_id55] s_id4 > 0 -> (s_id4'=s_id4-1);
+    // r_id56
+    [r_id56] s_id4 <= s_id4_MAX-1 -> (s_id4'=s_id4+1);
+    // r_id57
+    [r_id57] s_id4 > 0 -> (s_id4'=s_id4-1);
+
+endmodule
+
+// Species s_id5 (bdn)
+const int s_id5_MIN = 0;
+const int s_id5_MAX = MAX_AMOUNT;
+module s_id5
+
+    s_id5 : [s_id5_MIN..s_id5_MAX] init 10; // Initial amount 10
+
+    // r_id51
+    [r_id51] s_id5 > 0 -> (s_id5'=s_id5-1);
+    // r_id52
+    [r_id52] s_id5 <= s_id5_MAX-1 -> (s_id5'=s_id5+1);
+    // r_id54
+    [r_id54] s_id5 > 0 -> (s_id5'=s_id5-1);
+    // r_id57
+    [r_id57] s_id5 <= s_id5_MAX-1 -> (s_id5'=s_id5+1);
+    // r_id61
+    [r_id61] s_id5 > 0 -> (s_id5'=s_id5-0);
+    // r_id62
+    [r_id62] s_id5 > 0 -> (s_id5'=s_id5-0);
+
+endmodule
+
+// Species s_id6 (cup)
+const int s_id6_MIN = 0;
+const int s_id6_MAX = MAX_AMOUNT;
+module s_id6
+
+    s_id6 : [s_id6_MIN..s_id6_MAX] init 0; // Initial amount 0
+
+    // r_id69
+    [r_id69] s_id6 > 0 -> (s_id6'=s_id6-1);
+    // r_id71
+    [r_id71] s_id6 <= s_id6_MAX-1 -> (s_id6'=s_id6+1);
+    // r_id73
+    [r_id73] s_id6 <= s_id6_MAX-1 -> (s_id6'=s_id6+1);
+    // r_id74
+    [r_id74] s_id6 > 0 -> (s_id6'=s_id6-1);
+    // r_id81
+    [r_id81] s_id6 > 0 -> (s_id6'=s_id6-0);
+    // r_id82
+    [r_id82] s_id6 > 0 -> (s_id6'=s_id6-0);
+
+endmodule
+
+// Species s_id7 (cnt)
+const int s_id7_MIN = 0;
+const int s_id7_MAX = MAX_AMOUNT;
+module s_id7
+
+    s_id7 : [s_id7_MIN..s_id7_MAX] init 0; // Initial amount 0
+
+    // r_id69
+    [r_id69] s_id7 <= s_id7_MAX-2 -> (s_id7'=s_id7+2);
+    // r_id70
+    [r_id70] s_id7 > 0 -> (s_id7'=s_id7-1);
+    // r_id71
+    [r_id71] s_id7 > 0 -> (s_id7'=s_id7-1);
+    // r_id72
+    [r_id72] s_id7 <= s_id7_MAX-1 -> (s_id7'=s_id7+1);
+    // r_id73
+    [r_id73] s_id7 > 0 -> (s_id7'=s_id7-1);
+    // r_id74
+    [r_id74] s_id7 <= s_id7_MAX-1 -> (s_id7'=s_id7+1);
+    // r_id75
+    [r_id75] s_id7 > 0 -> (s_id7'=s_id7-1);
+
+endmodule
+
+// Species s_id8 (cdn)
+const int s_id8_MIN = 0;
+const int s_id8_MAX = MAX_AMOUNT;
+module s_id8
+
+    s_id8 : [s_id8_MIN..s_id8_MAX] init 10; // Initial amount 10
+
+    // r_id69
+    [r_id69] s_id8 > 0 -> (s_id8'=s_id8-1);
+    // r_id70
+    [r_id70] s_id8 <= s_id8_MAX-1 -> (s_id8'=s_id8+1);
+    // r_id72
+    [r_id72] s_id8 > 0 -> (s_id8'=s_id8-1);
+    // r_id75
+    [r_id75] s_id8 <= s_id8_MAX-1 -> (s_id8'=s_id8+1);
+    // r_id79
+    [r_id79] s_id8 > 0 -> (s_id8'=s_id8-0);
+    // r_id80
+    [r_id80] s_id8 > 0 -> (s_id8'=s_id8-0);
+
+endmodule
+
+// Species s_id9 (dup)
+const int s_id9_MIN = 0;
+const int s_id9_MAX = MAX_AMOUNT;
+module s_id9
+
+    s_id9 : [s_id9_MIN..s_id9_MAX] init 0; // Initial amount 0
+
+    // r_id87
+    [r_id87] s_id9 > 0 -> (s_id9'=s_id9-1);
+    // r_id89
+    [r_id89] s_id9 <= s_id9_MAX-1 -> (s_id9'=s_id9+1);
+    // r_id91
+    [r_id91] s_id9 <= s_id9_MAX-1 -> (s_id9'=s_id9+1);
+    // r_id92
+    [r_id92] s_id9 > 0 -> (s_id9'=s_id9-1);
+    // r_id99
+    [r_id99] s_id9 > 0 -> (s_id9'=s_id9-0);
+    // r_id100
+    [r_id100] s_id9 > 0 -> (s_id9'=s_id9-0);
+
+endmodule
+
+// Species s_id10 (dnt)
+const int s_id10_MIN = 0;
+const int s_id10_MAX = MAX_AMOUNT;
+module s_id10
+
+    s_id10 : [s_id10_MIN..s_id10_MAX] init 0; // Initial amount 0
+
+    // r_id87
+    [r_id87] s_id10 <= s_id10_MAX-2 -> (s_id10'=s_id10+2);
+    // r_id88
+    [r_id88] s_id10 > 0 -> (s_id10'=s_id10-1);
+    // r_id89
+    [r_id89] s_id10 > 0 -> (s_id10'=s_id10-1);
+    // r_id90
+    [r_id90] s_id10 <= s_id10_MAX-1 -> (s_id10'=s_id10+1);
+    // r_id91
+    [r_id91] s_id10 > 0 -> (s_id10'=s_id10-1);
+    // r_id92
+    [r_id92] s_id10 <= s_id10_MAX-1 -> (s_id10'=s_id10+1);
+    // r_id93
+    [r_id93] s_id10 > 0 -> (s_id10'=s_id10-1);
+
+endmodule
+
+// Species s_id11 (ddn)
+const int s_id11_MIN = 0;
+const int s_id11_MAX = MAX_AMOUNT;
+module s_id11
+
+    s_id11 : [s_id11_MIN..s_id11_MAX] init 10; // Initial amount 10
+
+    // r_id87
+    [r_id87] s_id11 > 0 -> (s_id11'=s_id11-1);
+    // r_id88
+    [r_id88] s_id11 <= s_id11_MAX-1 -> (s_id11'=s_id11+1);
+    // r_id90
+    [r_id90] s_id11 > 0 -> (s_id11'=s_id11-1);
+    // r_id93
+    [r_id93] s_id11 <= s_id11_MAX-1 -> (s_id11'=s_id11+1);
+    // r_id97
+    [r_id97] s_id11 > 0 -> (s_id11'=s_id11-0);
+    // r_id98
+    [r_id98] s_id11 > 0 -> (s_id11'=s_id11-0);
+
+endmodule
+
+// Species s_id12 (ahi)
+const int s_id12_MIN = 0;
+const int s_id12_MAX = MAX_AMOUNT;
+module s_id12
+
+    s_id12 : [s_id12_MIN..s_id12_MAX] init 0; // Initial amount 0
+
+    // r_id44
+    [r_id44] s_id12 > 0 -> (s_id12'=s_id12-1);
+    // r_id46
+    [r_id46] s_id12 <= s_id12_MAX-1 -> (s_id12'=s_id12+1);
+    // r_id47
+    [r_id47] s_id12 > 0 -> (s_id12'=s_id12-1);
+    // r_id50
+    [r_id50] s_id12 <= s_id12_MAX-1 -> (s_id12'=s_id12+1);
+    // r_id55
+    [r_id55] s_id12 > 0 -> (s_id12'=s_id12-0);
+
+endmodule
+
+// Species s_id13 (ab)
+const int s_id13_MIN = 0;
+const int s_id13_MAX = MAX_AMOUNT;
+module s_id13
+
+    s_id13 : [s_id13_MIN..s_id13_MAX] init 10; // Initial amount 10
+
+    // r_id44
+    [r_id44] s_id13 <= s_id13_MAX-2 -> (s_id13'=s_id13+2);
+    // r_id45
+    [r_id45] s_id13 > 0 -> (s_id13'=s_id13-1);
+    // r_id46
+    [r_id46] s_id13 > 0 -> (s_id13'=s_id13-1);
+    // r_id47
+    [r_id47] s_id13 <= s_id13_MAX-1 -> (s_id13'=s_id13+1);
+    // r_id48
+    [r_id48] s_id13 > 0 -> (s_id13'=s_id13-1);
+    // r_id49
+    [r_id49] s_id13 <= s_id13_MAX-1 -> (s_id13'=s_id13+1);
+    // r_id50
+    [r_id50] s_id13 > 0 -> (s_id13'=s_id13-1);
+
+endmodule
+
+// Species s_id14 (alo)
+const int s_id14_MIN = 0;
+const int s_id14_MAX = MAX_AMOUNT;
+module s_id14
+
+    s_id14 : [s_id14_MIN..s_id14_MAX] init 0; // Initial amount 0
+
+    // r_id44
+    [r_id44] s_id14 > 0 -> (s_id14'=s_id14-1);
+    // r_id45
+    [r_id45] s_id14 <= s_id14_MAX-1 -> (s_id14'=s_id14+1);
+    // r_id48
+    [r_id48] s_id14 <= s_id14_MAX-1 -> (s_id14'=s_id14+1);
+    // r_id49
+    [r_id49] s_id14 > 0 -> (s_id14'=s_id14-1);
+    // r_id57
+    [r_id57] s_id14 > 0 -> (s_id14'=s_id14-0);
+
+endmodule
+
+// Species s_id15 (bhi)
+const int s_id15_MIN = 0;
+const int s_id15_MAX = MAX_AMOUNT;
+module s_id15
+
+    s_id15 : [s_id15_MIN..s_id15_MAX] init 0; // Initial amount 0
+
+    // r_id58
+    [r_id58] s_id15 > 0 -> (s_id15'=s_id15-1);
+    // r_id60
+    [r_id60] s_id15 <= s_id15_MAX-1 -> (s_id15'=s_id15+1);
+    // r_id61
+    [r_id61] s_id15 > 0 -> (s_id15'=s_id15-1);
+    // r_id64
+    [r_id64] s_id15 <= s_id15_MAX-1 -> (s_id15'=s_id15+1);
+    // r_id65
+    [r_id65] s_id15 > 0 -> (s_id15'=s_id15-0);
+    // r_id66
+    [r_id66] s_id15 > 0 -> (s_id15'=s_id15-0);
+    // r_id73
+    [r_id73] s_id15 > 0 -> (s_id15'=s_id15-0);
+
+endmodule
+
+// Species s_id16 (bb)
+const int s_id16_MIN = 0;
+const int s_id16_MAX = MAX_AMOUNT;
+module s_id16
+
+    s_id16 : [s_id16_MIN..s_id16_MAX] init 10; // Initial amount 10
+
+    // r_id58
+    [r_id58] s_id16 <= s_id16_MAX-2 -> (s_id16'=s_id16+2);
+    // r_id59
+    [r_id59] s_id16 > 0 -> (s_id16'=s_id16-1);
+    // r_id60
+    [r_id60] s_id16 > 0 -> (s_id16'=s_id16-1);
+    // r_id61
+    [r_id61] s_id16 <= s_id16_MAX-1 -> (s_id16'=s_id16+1);
+    // r_id62
+    [r_id62] s_id16 > 0 -> (s_id16'=s_id16-1);
+    // r_id63
+    [r_id63] s_id16 <= s_id16_MAX-1 -> (s_id16'=s_id16+1);
+    // r_id64
+    [r_id64] s_id16 > 0 -> (s_id16'=s_id16-1);
+
+endmodule
+
+// Species s_id17 (blo)
+const int s_id17_MIN = 0;
+const int s_id17_MAX = MAX_AMOUNT;
+module s_id17
+
+    s_id17 : [s_id17_MIN..s_id17_MAX] init 0; // Initial amount 0
+
+    // r_id58
+    [r_id58] s_id17 > 0 -> (s_id17'=s_id17-1);
+    // r_id59
+    [r_id59] s_id17 <= s_id17_MAX-1 -> (s_id17'=s_id17+1);
+    // r_id62
+    [r_id62] s_id17 <= s_id17_MAX-1 -> (s_id17'=s_id17+1);
+    // r_id63
+    [r_id63] s_id17 > 0 -> (s_id17'=s_id17-1);
+    // r_id67
+    [r_id67] s_id17 > 0 -> (s_id17'=s_id17-0);
+    // r_id68
+    [r_id68] s_id17 > 0 -> (s_id17'=s_id17-0);
+    // r_id75
+    [r_id75] s_id17 > 0 -> (s_id17'=s_id17-0);
+
+endmodule
+
+// Species s_id18 (chi)
+const int s_id18_MIN = 0;
+const int s_id18_MAX = MAX_AMOUNT;
+module s_id18
+
+    s_id18 : [s_id18_MIN..s_id18_MAX] init 0; // Initial amount 0
+
+    // r_id76
+    [r_id76] s_id18 > 0 -> (s_id18'=s_id18-1);
+    // r_id78
+    [r_id78] s_id18 <= s_id18_MAX-1 -> (s_id18'=s_id18+1);
+    // r_id79
+    [r_id79] s_id18 > 0 -> (s_id18'=s_id18-1);
+    // r_id82
+    [r_id82] s_id18 <= s_id18_MAX-1 -> (s_id18'=s_id18+1);
+    // r_id83
+    [r_id83] s_id18 > 0 -> (s_id18'=s_id18-0);
+    // r_id84
+    [r_id84] s_id18 > 0 -> (s_id18'=s_id18-0);
+    // r_id91
+    [r_id91] s_id18 > 0 -> (s_id18'=s_id18-0);
+
+endmodule
+
+// Species s_id19 (cb)
+const int s_id19_MIN = 0;
+const int s_id19_MAX = MAX_AMOUNT;
+module s_id19
+
+    s_id19 : [s_id19_MIN..s_id19_MAX] init 10; // Initial amount 10
+
+    // r_id76
+    [r_id76] s_id19 <= s_id19_MAX-2 -> (s_id19'=s_id19+2);
+    // r_id77
+    [r_id77] s_id19 > 0 -> (s_id19'=s_id19-1);
+    // r_id78
+    [r_id78] s_id19 > 0 -> (s_id19'=s_id19-1);
+    // r_id79
+    [r_id79] s_id19 <= s_id19_MAX-1 -> (s_id19'=s_id19+1);
+    // r_id80
+    [r_id80] s_id19 > 0 -> (s_id19'=s_id19-1);
+    // r_id81
+    [r_id81] s_id19 <= s_id19_MAX-1 -> (s_id19'=s_id19+1);
+    // r_id82
+    [r_id82] s_id19 > 0 -> (s_id19'=s_id19-1);
+
+endmodule
+
+// Species s_id20 (clo)
+const int s_id20_MIN = 0;
+const int s_id20_MAX = MAX_AMOUNT;
+module s_id20
+
+    s_id20 : [s_id20_MIN..s_id20_MAX] init 0; // Initial amount 0
+
+    // r_id76
+    [r_id76] s_id20 > 0 -> (s_id20'=s_id20-1);
+    // r_id77
+    [r_id77] s_id20 <= s_id20_MAX-1 -> (s_id20'=s_id20+1);
+    // r_id80
+    [r_id80] s_id20 <= s_id20_MAX-1 -> (s_id20'=s_id20+1);
+    // r_id81
+    [r_id81] s_id20 > 0 -> (s_id20'=s_id20-1);
+    // r_id85
+    [r_id85] s_id20 > 0 -> (s_id20'=s_id20-0);
+    // r_id86
+    [r_id86] s_id20 > 0 -> (s_id20'=s_id20-0);
+    // r_id93
+    [r_id93] s_id20 > 0 -> (s_id20'=s_id20-0);
+
+endmodule
+
+// Species s_id21 (dhi)
+const int s_id21_MIN = 0;
+const int s_id21_MAX = MAX_AMOUNT;
+module s_id21
+
+    s_id21 : [s_id21_MIN..s_id21_MAX] init 0; // Initial amount 0
+
+    // r_id94
+    [r_id94] s_id21 > 0 -> (s_id21'=s_id21-1);
+    // r_id96
+    [r_id96] s_id21 <= s_id21_MAX-1 -> (s_id21'=s_id21+1);
+    // r_id97
+    [r_id97] s_id21 > 0 -> (s_id21'=s_id21-1);
+    // r_id100
+    [r_id100] s_id21 <= s_id21_MAX-1 -> (s_id21'=s_id21+1);
+    // r_id101
+    [r_id101] s_id21 > 0 -> (s_id21'=s_id21-0);
+    // r_id102
+    [r_id102] s_id21 > 0 -> (s_id21'=s_id21-0);
+
+endmodule
+
+// Species s_id22 (db)
+const int s_id22_MIN = 0;
+const int s_id22_MAX = MAX_AMOUNT;
+module s_id22
+
+    s_id22 : [s_id22_MIN..s_id22_MAX] init 10; // Initial amount 10
+
+    // r_id94
+    [r_id94] s_id22 <= s_id22_MAX-2 -> (s_id22'=s_id22+2);
+    // r_id95
+    [r_id95] s_id22 > 0 -> (s_id22'=s_id22-1);
+    // r_id96
+    [r_id96] s_id22 > 0 -> (s_id22'=s_id22-1);
+    // r_id97
+    [r_id97] s_id22 <= s_id22_MAX-1 -> (s_id22'=s_id22+1);
+    // r_id98
+    [r_id98] s_id22 > 0 -> (s_id22'=s_id22-1);
+    // r_id99
+    [r_id99] s_id22 <= s_id22_MAX-1 -> (s_id22'=s_id22+1);
+    // r_id100
+    [r_id100] s_id22 > 0 -> (s_id22'=s_id22-1);
+
+endmodule
+
+// Species s_id23 (dlo)
+const int s_id23_MIN = 0;
+const int s_id23_MAX = MAX_AMOUNT;
+module s_id23
+
+    s_id23 : [s_id23_MIN..s_id23_MAX] init 0; // Initial amount 0
+
+    // r_id94
+    [r_id94] s_id23 > 0 -> (s_id23'=s_id23-1);
+    // r_id95
+    [r_id95] s_id23 <= s_id23_MAX-1 -> (s_id23'=s_id23+1);
+    // r_id98
+    [r_id98] s_id23 <= s_id23_MAX-1 -> (s_id23'=s_id23+1);
+    // r_id99
+    [r_id99] s_id23 > 0 -> (s_id23'=s_id23-1);
+    // r_id103
+    [r_id103] s_id23 > 0 -> (s_id23'=s_id23-0);
+    // r_id104
+    [r_id104] s_id23 > 0 -> (s_id23'=s_id23-0);
+
+endmodule
+
+// Species s_id24 (acchi)
+const int s_id24_MIN = 0;
+const int s_id24_MAX = MAX_AMOUNT;
+module s_id24
+
+    s_id24 : [s_id24_MIN..s_id24_MAX] init 10; // Initial amount 10
+
+    // r_id90
+    [r_id90] s_id24 > 0 -> (s_id24'=s_id24-0);
+
+endmodule
+
+// Species s_id25 (acclo)
+const int s_id25_MIN = 0;
+const int s_id25_MAX = MAX_AMOUNT;
+module s_id25
+
+    s_id25 : [s_id25_MIN..s_id25_MAX] init 0; // Initial amount 0
+
+    // r_id92
+    [r_id92] s_id25 > 0 -> (s_id25'=s_id25-0);
+
+endmodule
+
+// Species s_id26 (reqhi)
+const int s_id26_MIN = 0;
+const int s_id26_MAX = MAX_AMOUNT;
+module s_id26
+
+    s_id26 : [s_id26_MIN..s_id26_MAX] init 10; // Initial amount 10
+
+    // r_id41
+    [r_id41] s_id26 > 0 -> (s_id26'=s_id26-0);
+
+endmodule
+
+// Species s_id27 (reqlo)
+const int s_id27_MIN = 0;
+const int s_id27_MAX = MAX_AMOUNT;
+module s_id27
+
+    s_id27 : [s_id27_MIN..s_id27_MAX] init 0; // Initial amount 0
+
+    // r_id43
+    [r_id43] s_id27 > 0 -> (s_id27'=s_id27-0);
+
+endmodule
+
+// Species s_id28 (bNotUp)
+const int s_id28_MIN = 0;
+const int s_id28_MAX = MAX_AMOUNT;
+module s_id28
+
+    s_id28 : [s_id28_MIN..s_id28_MAX] init 0; // Initial amount 0
+
+    // r_id40
+    [r_id40] s_id28 > 0 -> (s_id28'=s_id28-0);
+    // r_id66
+    [r_id66] s_id28 > 0 -> (s_id28'=s_id28-1);
+    // r_id67
+    [r_id67] s_id28 <= s_id28_MAX-1 -> (s_id28'=s_id28+1);
+    // r_id68
+    [r_id68] s_id28 <= s_id28_MAX-1 -> (s_id28'=s_id28+1);
+
+endmodule
+
+// Species s_id29 (bNotNt)
+const int s_id29_MIN = 0;
+const int s_id29_MAX = MAX_AMOUNT;
+module s_id29
+
+    s_id29 : [s_id29_MIN..s_id29_MAX] init 10; // Initial amount 10
+
+    // r_id65
+    [r_id65] s_id29 > 0 -> (s_id29'=s_id29-1);
+    // r_id67
+    [r_id67] s_id29 > 0 -> (s_id29'=s_id29-1);
+
+endmodule
+
+// Species s_id30 (bNotDown)
+const int s_id30_MIN = 0;
+const int s_id30_MAX = MAX_AMOUNT;
+module s_id30
+
+    s_id30 : [s_id30_MIN..s_id30_MAX] init 0; // Initial amount 0
+
+    // r_id42
+    [r_id42] s_id30 > 0 -> (s_id30'=s_id30-0);
+    // r_id65
+    [r_id65] s_id30 <= s_id30_MAX-1 -> (s_id30'=s_id30+1);
+    // r_id66
+    [r_id66] s_id30 <= s_id30_MAX-1 -> (s_id30'=s_id30+1);
+    // r_id68
+    [r_id68] s_id30 > 0 -> (s_id30'=s_id30-1);
+
+endmodule
+
+// Species s_id31 (cNotUp)
+const int s_id31_MIN = 0;
+const int s_id31_MAX = MAX_AMOUNT;
+module s_id31
+
+    s_id31 : [s_id31_MIN..s_id31_MAX] init 0; // Initial amount 0
+
+    // r_id54
+    [r_id54] s_id31 > 0 -> (s_id31'=s_id31-0);
+    // r_id84
+    [r_id84] s_id31 > 0 -> (s_id31'=s_id31-1);
+    // r_id85
+    [r_id85] s_id31 <= s_id31_MAX-1 -> (s_id31'=s_id31+1);
+    // r_id86
+    [r_id86] s_id31 <= s_id31_MAX-1 -> (s_id31'=s_id31+1);
+
+endmodule
+
+// Species s_id32 (cNotNt)
+const int s_id32_MIN = 0;
+const int s_id32_MAX = MAX_AMOUNT;
+module s_id32
+
+    s_id32 : [s_id32_MIN..s_id32_MAX] init 10; // Initial amount 10
+
+    // r_id83
+    [r_id83] s_id32 > 0 -> (s_id32'=s_id32-1);
+    // r_id85
+    [r_id85] s_id32 > 0 -> (s_id32'=s_id32-1);
+
+endmodule
+
+// Species s_id33 (cNotDown)
+const int s_id33_MIN = 0;
+const int s_id33_MAX = MAX_AMOUNT;
+module s_id33
+
+    s_id33 : [s_id33_MIN..s_id33_MAX] init 0; // Initial amount 0
+
+    // r_id56
+    [r_id56] s_id33 > 0 -> (s_id33'=s_id33-0);
+    // r_id83
+    [r_id83] s_id33 <= s_id33_MAX-1 -> (s_id33'=s_id33+1);
+    // r_id84
+    [r_id84] s_id33 <= s_id33_MAX-1 -> (s_id33'=s_id33+1);
+    // r_id86
+    [r_id86] s_id33 > 0 -> (s_id33'=s_id33-1);
+
+endmodule
+
+// Species s_id34 (dNotUp)
+const int s_id34_MIN = 0;
+const int s_id34_MAX = MAX_AMOUNT;
+module s_id34
+
+    s_id34 : [s_id34_MIN..s_id34_MAX] init 0; // Initial amount 0
+
+    // r_id72
+    [r_id72] s_id34 > 0 -> (s_id34'=s_id34-0);
+    // r_id102
+    [r_id102] s_id34 > 0 -> (s_id34'=s_id34-1);
+    // r_id103
+    [r_id103] s_id34 <= s_id34_MAX-1 -> (s_id34'=s_id34+1);
+    // r_id104
+    [r_id104] s_id34 <= s_id34_MAX-1 -> (s_id34'=s_id34+1);
+
+endmodule
+
+// Species s_id35 (dNotNt)
+const int s_id35_MIN = 0;
+const int s_id35_MAX = MAX_AMOUNT;
+module s_id35
+
+    s_id35 : [s_id35_MIN..s_id35_MAX] init 10; // Initial amount 10
+
+    // r_id101
+    [r_id101] s_id35 > 0 -> (s_id35'=s_id35-1);
+    // r_id103
+    [r_id103] s_id35 > 0 -> (s_id35'=s_id35-1);
+
+endmodule
+
+// Species s_id36 (dNotDown)
+const int s_id36_MIN = 0;
+const int s_id36_MAX = MAX_AMOUNT;
+module s_id36
+
+    s_id36 : [s_id36_MIN..s_id36_MAX] init 0; // Initial amount 0
+
+    // r_id74
+    [r_id74] s_id36 > 0 -> (s_id36'=s_id36-0);
+    // r_id101
+    [r_id101] s_id36 <= s_id36_MAX-1 -> (s_id36'=s_id36+1);
+    // r_id102
+    [r_id102] s_id36 <= s_id36_MAX-1 -> (s_id36'=s_id36+1);
+    // r_id104
+    [r_id104] s_id36 > 0 -> (s_id36'=s_id36-1);
+
+endmodule
+
+// Reaction rates
+module reaction_rates
+
+    // r_id37
+    [r_id37] (k_r_id37*s_id2*s_id0) > 0 -> (k_r_id37*s_id2*s_id0) : true;
+    // r_id38
+    [r_id38] (k_r_id38*s_id1*s_id2) > 0 -> (k_r_id38*s_id1*s_id2) : true;
+    // r_id39
+    [r_id39] (k_r_id39*s_id1*s_id0) > 0 -> (k_r_id39*s_id1*s_id0) : true;
+    // r_id40
+    [r_id40] (k_r_id40*s_id2*s_id28) > 0 -> (k_r_id40*s_id2*s_id28) : true;
+    // r_id41
+    [r_id41] (k_r_id41*s_id1*s_id26) > 0 -> (k_r_id41*s_id1*s_id26) : true;
+    // r_id42
+    [r_id42] (k_r_id42*s_id0*s_id30) > 0 -> (k_r_id42*s_id0*s_id30) : true;
+    // r_id43
+    [r_id43] (k_r_id43*s_id1*s_id27) > 0 -> (k_r_id43*s_id1*s_id27) : true;
+    // r_id44
+    [r_id44] (k_r_id44*s_id14*s_id12) > 0 -> (k_r_id44*s_id14*s_id12) : true;
+    // r_id45
+    [r_id45] (k_r_id45*s_id13*s_id14) > 0 -> (k_r_id45*s_id13*s_id14) : true;
+    // r_id46
+    [r_id46] (k_r_id46*s_id13*s_id12) > 0 -> (k_r_id46*s_id13*s_id12) : true;
+    // r_id47
+    [r_id47] (k_r_id47*s_id2*s_id12) > 0 -> (k_r_id47*s_id2*s_id12) : true;
+    // r_id48
+    [r_id48] (k_r_id48*s_id2*s_id13) > 0 -> (k_r_id48*s_id2*s_id13) : true;
+    // r_id49
+    [r_id49] (k_r_id49*s_id0*s_id14) > 0 -> (k_r_id49*s_id0*s_id14) : true;
+    // r_id50
+    [r_id50] (k_r_id50*s_id0*s_id13) > 0 -> (k_r_id50*s_id0*s_id13) : true;
+    // r_id51
+    [r_id51] (k_r_id51*s_id5*s_id3) > 0 -> (k_r_id51*s_id5*s_id3) : true;
+    // r_id52
+    [r_id52] (k_r_id52*s_id4*s_id5) > 0 -> (k_r_id52*s_id4*s_id5) : true;
+    // r_id53
+    [r_id53] (k_r_id53*s_id4*s_id3) > 0 -> (k_r_id53*s_id4*s_id3) : true;
+    // r_id54
+    [r_id54] (k_r_id54*s_id5*s_id31) > 0 -> (k_r_id54*s_id5*s_id31) : true;
+    // r_id55
+    [r_id55] (k_r_id55*s_id4*s_id12) > 0 -> (k_r_id55*s_id4*s_id12) : true;
+    // r_id56
+    [r_id56] (k_r_id56*s_id3*s_id33) > 0 -> (k_r_id56*s_id3*s_id33) : true;
+    // r_id57
+    [r_id57] (k_r_id57*s_id4*s_id14) > 0 -> (k_r_id57*s_id4*s_id14) : true;
+    // r_id58
+    [r_id58] (k_r_id58*s_id17*s_id15) > 0 -> (k_r_id58*s_id17*s_id15) : true;
+    // r_id59
+    [r_id59] (k_r_id59*s_id16*s_id17) > 0 -> (k_r_id59*s_id16*s_id17) : true;
+    // r_id60
+    [r_id60] (k_r_id60*s_id16*s_id15) > 0 -> (k_r_id60*s_id16*s_id15) : true;
+    // r_id61
+    [r_id61] (k_r_id61*s_id5*s_id15) > 0 -> (k_r_id61*s_id5*s_id15) : true;
+    // r_id62
+    [r_id62] (k_r_id62*s_id5*s_id16) > 0 -> (k_r_id62*s_id5*s_id16) : true;
+    // r_id63
+    [r_id63] (k_r_id63*s_id3*s_id17) > 0 -> (k_r_id63*s_id3*s_id17) : true;
+    // r_id64
+    [r_id64] (k_r_id64*s_id3*s_id16) > 0 -> (k_r_id64*s_id3*s_id16) : true;
+    // r_id65
+    [r_id65] (k_r_id65*s_id15*s_id29) > 0 -> (k_r_id65*s_id15*s_id29) : true;
+    // r_id66
+    [r_id66] (k_r_id66*s_id15*s_id28) > 0 -> (k_r_id66*s_id15*s_id28) : true;
+    // r_id67
+    [r_id67] (k_r_id67*s_id17*s_id29) > 0 -> (k_r_id67*s_id17*s_id29) : true;
+    // r_id68
+    [r_id68] (k_r_id68*s_id17*s_id30) > 0 -> (k_r_id68*s_id17*s_id30) : true;
+    // r_id69
+    [r_id69] (k_r_id69*s_id8*s_id6) > 0 -> (k_r_id69*s_id8*s_id6) : true;
+    // r_id70
+    [r_id70] (k_r_id70*s_id7*s_id8) > 0 -> (k_r_id70*s_id7*s_id8) : true;
+    // r_id71
+    [r_id71] (k_r_id71*s_id7*s_id6) > 0 -> (k_r_id71*s_id7*s_id6) : true;
+    // r_id72
+    [r_id72] (k_r_id72*s_id8*s_id34) > 0 -> (k_r_id72*s_id8*s_id34) : true;
+    // r_id73
+    [r_id73] (k_r_id73*s_id7*s_id15) > 0 -> (k_r_id73*s_id7*s_id15) : true;
+    // r_id74
+    [r_id74] (k_r_id74*s_id6*s_id36) > 0 -> (k_r_id74*s_id6*s_id36) : true;
+    // r_id75
+    [r_id75] (k_r_id75*s_id7*s_id17) > 0 -> (k_r_id75*s_id7*s_id17) : true;
+    // r_id76
+    [r_id76] (k_r_id76*s_id20*s_id18) > 0 -> (k_r_id76*s_id20*s_id18) : true;
+    // r_id77
+    [r_id77] (k_r_id77*s_id19*s_id20) > 0 -> (k_r_id77*s_id19*s_id20) : true;
+    // r_id78
+    [r_id78] (k_r_id78*s_id19*s_id18) > 0 -> (k_r_id78*s_id19*s_id18) : true;
+    // r_id79
+    [r_id79] (k_r_id79*s_id8*s_id18) > 0 -> (k_r_id79*s_id8*s_id18) : true;
+    // r_id80
+    [r_id80] (k_r_id80*s_id8*s_id19) > 0 -> (k_r_id80*s_id8*s_id19) : true;
+    // r_id81
+    [r_id81] (k_r_id81*s_id6*s_id20) > 0 -> (k_r_id81*s_id6*s_id20) : true;
+    // r_id82
+    [r_id82] (k_r_id82*s_id6*s_id19) > 0 -> (k_r_id82*s_id6*s_id19) : true;
+    // r_id83
+    [r_id83] (k_r_id83*s_id18*s_id32) > 0 -> (k_r_id83*s_id18*s_id32) : true;
+    // r_id84
+    [r_id84] (k_r_id84*s_id18*s_id31) > 0 -> (k_r_id84*s_id18*s_id31) : true;
+    // r_id85
+    [r_id85] (k_r_id85*s_id20*s_id32) > 0 -> (k_r_id85*s_id20*s_id32) : true;
+    // r_id86
+    [r_id86] (k_r_id86*s_id20*s_id33) > 0 -> (k_r_id86*s_id20*s_id33) : true;
+    // r_id87
+    [r_id87] (k_r_id87*s_id11*s_id9) > 0 -> (k_r_id87*s_id11*s_id9) : true;
+    // r_id88
+    [r_id88] (k_r_id88*s_id10*s_id11) > 0 -> (k_r_id88*s_id10*s_id11) : true;
+    // r_id89
+    [r_id89] (k_r_id89*s_id10*s_id9) > 0 -> (k_r_id89*s_id10*s_id9) : true;
+    // r_id90
+    [r_id90] (k_r_id90*s_id11*s_id24) > 0 -> (k_r_id90*s_id11*s_id24) : true;
+    // r_id91
+    [r_id91] (k_r_id91*s_id10*s_id18) > 0 -> (k_r_id91*s_id10*s_id18) : true;
+    // r_id92
+    [r_id92] (k_r_id92*s_id9*s_id25) > 0 -> (k_r_id92*s_id9*s_id25) : true;
+    // r_id93
+    [r_id93] (k_r_id93*s_id10*s_id20) > 0 -> (k_r_id93*s_id10*s_id20) : true;
+    // r_id94
+    [r_id94] (k_r_id94*s_id23*s_id21) > 0 -> (k_r_id94*s_id23*s_id21) : true;
+    // r_id95
+    [r_id95] (k_r_id95*s_id22*s_id23) > 0 -> (k_r_id95*s_id22*s_id23) : true;
+    // r_id96
+    [r_id96] (k_r_id96*s_id22*s_id21) > 0 -> (k_r_id96*s_id22*s_id21) : true;
+    // r_id97
+    [r_id97] (k_r_id97*s_id11*s_id21) > 0 -> (k_r_id97*s_id11*s_id21) : true;
+    // r_id98
+    [r_id98] (k_r_id98*s_id11*s_id22) > 0 -> (k_r_id98*s_id11*s_id22) : true;
+    // r_id99
+    [r_id99] (k_r_id99*s_id9*s_id23) > 0 -> (k_r_id99*s_id9*s_id23) : true;
+    // r_id100
+    [r_id100] (k_r_id100*s_id9*s_id22) > 0 -> (k_r_id100*s_id9*s_id22) : true;
+    // r_id101
+    [r_id101] (k_r_id101*s_id21*s_id35) > 0 -> (k_r_id101*s_id21*s_id35) : true;
+    // r_id102
+    [r_id102] (k_r_id102*s_id21*s_id34) > 0 -> (k_r_id102*s_id21*s_id34) : true;
+    // r_id103
+    [r_id103] (k_r_id103*s_id23*s_id35) > 0 -> (k_r_id103*s_id23*s_id35) : true;
+    // r_id104
+    [r_id104] (k_r_id104*s_id23*s_id36) > 0 -> (k_r_id104*s_id23*s_id36) : true;
+
+endmodule
+
+// Reward structures (one per species)
+
+// Species s_id0 (aup)
+rewards "s_id0" true : s_id0; endrewards
+// Species s_id1 (ant)
+rewards "s_id1" true : s_id1; endrewards
+// Species s_id2 (adn)
+rewards "s_id2" true : s_id2; endrewards
+// Species s_id3 (bup)
+rewards "s_id3" true : s_id3; endrewards
+// Species s_id4 (bnt)
+rewards "s_id4" true : s_id4; endrewards
+// Species s_id5 (bdn)
+rewards "s_id5" true : s_id5; endrewards
+// Species s_id6 (cup)
+rewards "s_id6" true : s_id6; endrewards
+// Species s_id7 (cnt)
+rewards "s_id7" true : s_id7; endrewards
+// Species s_id8 (cdn)
+rewards "s_id8" true : s_id8; endrewards
+// Species s_id9 (dup)
+rewards "s_id9" true : s_id9; endrewards
+// Species s_id10 (dnt)
+rewards "s_id10" true : s_id10; endrewards
+// Species s_id11 (ddn)
+rewards "s_id11" true : s_id11; endrewards
+// Species s_id12 (ahi)
+rewards "s_id12" true : s_id12; endrewards
+// Species s_id13 (ab)
+rewards "s_id13" true : s_id13; endrewards
+// Species s_id14 (alo)
+rewards "s_id14" true : s_id14; endrewards
+// Species s_id15 (bhi)
+rewards "s_id15" true : s_id15; endrewards
+// Species s_id16 (bb)
+rewards "s_id16" true : s_id16; endrewards
+// Species s_id17 (blo)
+rewards "s_id17" true : s_id17; endrewards
+// Species s_id18 (chi)
+rewards "s_id18" true : s_id18; endrewards
+// Species s_id19 (cb)
+rewards "s_id19" true : s_id19; endrewards
+// Species s_id20 (clo)
+rewards "s_id20" true : s_id20; endrewards
+// Species s_id21 (dhi)
+rewards "s_id21" true : s_id21; endrewards
+// Species s_id22 (db)
+rewards "s_id22" true : s_id22; endrewards
+// Species s_id23 (dlo)
+rewards "s_id23" true : s_id23; endrewards
+// Species s_id24 (acchi)
+rewards "s_id24" true : s_id24; endrewards
+// Species s_id25 (acclo)
+rewards "s_id25" true : s_id25; endrewards
+// Species s_id26 (reqhi)
+rewards "s_id26" true : s_id26; endrewards
+// Species s_id27 (reqlo)
+rewards "s_id27" true : s_id27; endrewards
+// Species s_id28 (bNotUp)
+rewards "s_id28" true : s_id28; endrewards
+// Species s_id29 (bNotNt)
+rewards "s_id29" true : s_id29; endrewards
+// Species s_id30 (bNotDown)
+rewards "s_id30" true : s_id30; endrewards
+// Species s_id31 (cNotUp)
+rewards "s_id31" true : s_id31; endrewards
+// Species s_id32 (cNotNt)
+rewards "s_id32" true : s_id32; endrewards
+// Species s_id33 (cNotDown)
+rewards "s_id33" true : s_id33; endrewards
+// Species s_id34 (dNotUp)
+rewards "s_id34" true : s_id34; endrewards
+// Species s_id35 (dNotNt)
+rewards "s_id35" true : s_id35; endrewards
+// Species s_id36 (dNotDown)
+rewards "s_id36" true : s_id36; endrewards
+
+// Reward structure for calculating expected times
+rewards "time" true : 1; endrewards
+

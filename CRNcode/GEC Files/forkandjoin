@@ -1,0 +1,18 @@
+directive sample 10.0 100
+ 
+rate rt = 1.0;
+ 
+//INPUTS
+  init xstart 10.0
+  |init pathOne 0.0
+  |init pathTwo 0.0
+  |init lambdaOne 10.0
+  |init lambdaTwo 0.0
+  |init xfinish 0.0
+
+//REACTIONS
+
+| xhi ->{rt}  pathOne
+| xhi ->{rt} pathTwo
+| pathOne + lambdaOne ->{rt} pathOne + lambdaTwo
+| pathTwo + lambdaTwo ->{rt} pathTwo + xfinish

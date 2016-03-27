@@ -1,0 +1,33 @@
+directive sample 10.0 100
+ 
+rate rt = 1.0;
+
+//inputs
+  init xlo 10.0
+| init xhi 0.0
+| init ylo 1.0
+| init yhi 0.0
+
+//pulleys
+| init ze 0.0
+| init zw 10.0
+| init zq 10.0
+
+//outputs
+| init zlo 0.0
+| init zhi 0.0
+
+//reactions
+
+|xhi + ze ->{rt} xhi + zhi
+|yhi + zw ->{rt} yhi + ze
+
+|xlo + zq ->{rt} xlo + zlo
+|ylo + zq ->{rt} ylo + zlo
+
+//for persistance
+
+|zhi + xlo ->{rt} ze + xlo
+|zhi + ylo ->{rt} zw + ylo
+
+|zlo + zhi ->{rt} zhi + zq

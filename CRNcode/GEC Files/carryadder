@@ -1,0 +1,683 @@
+directive sample 20.0 100
+directive plot ahi;bhi;chi
+directive simulation deterministic
+rate rt = 1.0;
+ 
+ // C ELEMENTS
+ //AM SWITCH 1
+  init aup 0.0
+| init ant 0.0
+| init adn 10.0
+
+//AM SWITCH 2
+| init bup 0.0
+| init bnt 0.0
+| init bdn 10.0
+
+//AM SWITCH 3
+| init cup 0.0
+| init cnt 0.0
+| init cdn 10.0
+
+//AM SWITCH 4
+| init dup 0.0
+| init dnt 0.0
+| init ddn 10.0
+
+//AMP 1 
+| init ahi 0.0
+| init ab 10.0
+| init alo 0.0
+
+//AMP 2 
+| init bhi 0.0
+| init bb 10.0
+| init blo 0.0
+
+//AMP 3 
+| init chi 0.0
+| init cb 10.0
+| init clo 0.0
+
+//AMP 4 
+| init dhi 0.0
+| init db 10.0
+| init dlo 0.0
+
+//INPUTS 
+| init acchi 10.0
+| init acclo 0.0
+ 
+| init reqhi 10.0
+| init reqlo 0.0
+
+
+
+//inputs
+| init aaaOneIn  10.0
+| init aaaZeroIn 0.0
+
+| init aabOneIn  10.0
+| init aabZeroIn 0.0
+
+| init aacOneIn  10.0
+| init aacZeroIn 0.0
+
+
+//outputs
+| init aasOneOut 0.0
+| init aasZeroOut 0.0
+
+| init aacOneOut 0.0
+| init aacZeroOut 0.0
+
+//X0R1
+| init aaaxorOneLone 0.0
+| init aaxorOnelTwo 10.0
+| init aaxorOnelThree 10.0
+| init aaxorOnelFour 0.0
+| init aaxorOneHi 0.0
+| init aaxorOneLo 0.0
+
+//XOR2
+
+| init aaxorTwolOne 0.0
+| init aaxorTwolTwo 10.0
+| init aaxorTwolThree 10.0
+| init aaxorTwolFour 0.0
+
+//AND1
+| init aaandOnelq 0.0
+| init aaandOnelw 10.0
+| init aaandOnele 10.0
+| init aaandOneHi 0.0
+| init aaandOneLo 0.0
+
+//AND2
+| init aaandTwole 0.0
+| init aaandTwolw 10.0
+| init aaandTwolq 10.0
+| init aaandTwoHi 0.0
+| init aaandTwoLo 0.0
+
+//OR1
+| init aaorle 10.0
+| init aaorlw 10.0
+| init aaorlq 0.0
+
+
+
+//inputs
+  
+| init bbaOneIn  10.0
+| init bbaZeroIn 0.0
+
+| init bbbOneIn  10.0
+| init bbbZeroIn 0.0
+
+| init aacOneOut  10.0
+| init aacZeroOut 0.0
+
+
+//outputs
+| init bbsOneOut 0.0
+| init bbsZeroOut 0.0
+
+| init bbcOneOut 0.0
+| init bbcZeroOut 0.0
+
+//X0R1
+| init bbaxorOneLone 0.0
+| init bbxorOnelTwo 10.0
+| init bbxorOnelThree 10.0
+| init bbxorOnelFour 0.0
+| init bbxorOneHi 0.0
+| init bbxorOneLo 0.0
+
+//XOR2
+
+| init bbxorTwolOne 0.0
+| init bbxorTwolTwo 10.0
+| init bbxorTwolThree 10.0
+| init bbxorTwolFour 0.0
+
+//AND1
+| init bbandOnelq 0.0
+| init bbandOnelw 10.0
+| init bbandOnele 10.0
+| init bbandOneHi 0.0
+| init bbandOneLo 0.0
+
+//AND2
+| init bbandTwole 0.0
+| init bbandTwolw 10.0
+| init bbandTwolq 10.0
+| init bbandTwoHi 0.0
+| init bbandTwoLo 0.0
+
+//OR1
+| init bborle 10.0
+| init bborlw 10.0
+| init bborlq 0.0
+
+
+
+//inputs
+| init ccaOneIn  10.0
+| init ccaZeroIn 0.0
+
+| init ccbOneIn  10.0
+| init ccbZeroIn 0.0
+
+| init bbcOneOut  10.0
+| init bbcZeroOut 0.0
+
+
+//outputs
+| init ccsOneOut 0.0
+| init ccsZeroOut 0.0
+
+| init cccOneOut 0.0
+| init cccZeroOut 0.0
+
+//X0R1
+| init ccaxorOneLone 0.0
+| init ccxorOnelTwo 10.0
+| init ccxorOnelThree 10.0
+| init ccxorOnelFour 0.0
+| init ccxorOneHi 0.0
+| init ccxorOneLo 0.0
+
+//XOR2
+
+| init ccxorTwolOne 0.0
+| init ccxorTwolTwo 10.0
+| init ccxorTwolThree 10.0
+| init ccxorTwolFour 0.0
+
+//AND1
+| init ccandOnelq 0.0
+| init ccandOnelw 10.0
+| init ccandOnele 10.0
+| init ccandOneHi 0.0
+| init ccandOneLo 0.0
+
+//AND2
+| init ccandTwole 0.0
+| init ccandTwolw 10.0
+| init ccandTwolq 10.0
+| init ccandTwoHi 0.0
+| init ccandTwoLo 0.0
+
+//OR1
+| init ccorle 10.0
+| init ccorlw 10.0
+| init ccorlq 0.0
+
+| init aabridgeOne 10.0
+| init aabridgeTwo 0.0
+| init aabridgeThree 10.0
+| init aabridgeFour 0.0
+| init aabridgeOneOut 0.0
+| init aabridgeZeroOut 0.0
+
+| init bbbridgeOne 10.0
+| init bbbridgeTwo 0.0
+| init bbbridgeThree 10.0
+| init bbbridgeFour 0.0
+| init bbbridgeOneOut 0.0
+| init bbbridgeZeroOut 0.0
+
+| init ccbridgeOne 10.0
+| init ccbridgeTwo 0.0
+| init ccbridgeThree 10.0
+| init ccbridgeFour 0.0
+| init ccbridgeOneOut 0.0
+| init ccbridgeZeroOut 0.0
+
+
+//NOT
+
+| init bNotUp 0.0
+| init bNotNt 10.0
+| init bNotDown 0.0
+
+| init cNotUp 0.0
+| init cNotNt 10.0
+| init cNotDown 0.0 
+
+| init dNotUp 0.0
+| init dNotNt 10.0
+| init dNotDown 0.0
+
+
+//AREA 1 
+| adn + aup ->{rt} ant + ant
+| ant + adn ->{rt} adn + adn
+| ant + aup ->{rt} aup + aup
+ 
+| adn + bNotUp ->{rt} ant + bNotUp
+| ant + reqhi ->{rt} aup + reqhi
+| aup + bNotDown->{rt} ant + bNotDown
+| ant + reqlo ->{rt} adn + reqlo
+ 
+//| alo + aup ->{rt} ahi + aup 
+//| ahi + adn ->{rt} alo + adn
+
+| alo + ahi ->{rt} ab + ab
+| ab + alo ->{rt}  alo + alo
+| ab + ahi ->{rt} ahi + ahi
+
+| adn + ahi ->{rt} adn + ab
+| adn + ab ->{rt}  adn + alo
+| aup + alo ->{rt} aup + ab
+| aup + ab ->{rt}  aup + ahi
+
+//AREA 2
+| bdn + bup ->{rt} bnt + bnt
+| bnt + bdn ->{rt} bdn + bdn
+| bnt + bup ->{rt} bup + bup
+
+| bdn + cNotUp ->{rt} bnt + cNotUp
+| bnt + ahi ->{rt} bup + ahi
+| bup + cNotDown ->{rt} bnt + cNotDown
+| bnt + alo ->{rt} bdn + alo
+ 
+//| blo + bup ->{rt} bhi + bup
+//| bhi + bdn ->{rt} blo + bdn
+
+| blo + bhi ->{rt} bb + bb
+| bb + blo ->{rt}  blo + blo
+| bb + bhi ->{rt}  bhi + bhi
+
+| bdn + bhi ->{rt} bdn + bb
+| bdn + bb ->{rt}  bdn + blo
+| bup + blo ->{rt} bup + bb
+| bup + bb ->{rt}  bup + bhi
+
+
+| bhi + bNotNt ->{rt} bhi + bNotDown
+| bhi + bNotUp ->{rt} bhi + bNotDown
+
+| blo + bNotNt ->{rt} blo + bNotUp
+| blo + bNotDown ->{rt} blo + bNotUp
+
+//AREA 3
+| cdn + cup ->{rt} cnt + cnt
+| cnt + cdn ->{rt} cdn + cdn
+| cnt + cup ->{rt} cup + cup
+
+| cdn + dNotUp ->{rt} cnt + dNotUp
+| cnt + bhi ->{rt} cup + bhi
+| cup + dNotDown ->{rt} cnt + dNotDown
+| cnt + blo ->{rt} cdn + blo
+ 
+//| clo + cup ->{rt} chi + cup
+//| chi + cdn ->{rt} clo + cdn
+
+| clo + chi ->{rt} cb + cb
+| cb + clo ->{rt}  clo + clo
+| cb + chi ->{rt}  chi + chi
+
+| cdn + chi ->{rt} cdn + cb
+| cdn + cb ->{rt}  cdn + clo
+| cup + clo ->{rt} cup + cb
+| cup + cb ->{rt}  cup + chi
+
+| chi + cNotNt ->{rt} chi + cNotDown
+| chi + cNotUp ->{rt} chi + cNotDown
+
+| clo + cNotNt ->{rt} clo + cNotUp
+| clo + cNotDown ->{rt} clo + cNotUp
+
+//| chi + reqhi ->{rt} chi + reqlo
+//| chi + acchi ->{rt} chi 
+
+//AREA 4
+| ddn + dup ->{rt} dnt + dnt
+| dnt + ddn ->{rt} ddn + ddn
+| dnt + dup ->{rt} dup + dup
+
+| ddn + acchi ->{rt} dnt + acchi
+| dnt + chi ->{rt} dup + chi
+| dup + acclo ->{rt} dnt + acclo
+| dnt + clo ->{rt} ddn + clo
+ 
+//| dlo + dup ->{rt} dhi + dup
+//| dhi + ddn ->{rt} dlo + ddn
+
+| dlo + dhi ->{rt} db + db
+| db + dlo ->{rt}  dlo + dlo
+| db + dhi ->{rt}  dhi + dhi
+
+| ddn + dhi ->{rt} ddn + db
+| ddn + db ->{rt}  ddn + dlo
+| dup + dlo ->{rt} dup + db
+| dup + db ->{rt}  dup + dhi
+
+| dhi + dNotNt ->{rt} dhi + dNotDown
+| dhi + dNotUp ->{rt} dhi + dNotDown
+
+| dlo + dNotNt ->{rt} dlo + dNotUp
+| dlo + dNotDown ->{rt} dlo + dNotUp
+
+
+| aacOneOut +  aabridgeOne ->{rt} aacOneOut + aabridgeTwo
+| aacZeroOut + aabridgeThree ->{rt} aacZeroOut + aabridgeFour
+| ahi + aabridgeTwo ->{rt} ahi + aabridgeOneOut
+| ahi + aabridgeFour ->{rt} ahi + aabridgeZeroOut
+
+| aacZeroOut + aabridgeOneOut ->{rt} aacZeroOut + aabridgeTwo
+| aacZeroOut + aabridgeTwo ->{rt} aacZeroOut + aabridgeOne  
+| aacOneOut  + aabridgeZeroOut ->{rt} aacOneOut + aabridgeFour
+| aacOneOut  + aabridgeFour ->{rt} aacOneOut + aabridgeThree
+
+| bbcOneOut +  bbbridgeOne ->{rt} bbcOneOut + bbbridgeTwo
+| bbcZeroOut + bbbridgeThree ->{rt} bbcZeroOut + bbbridgeFour
+| bhi + bbbridgeTwo ->{rt} bhi + bbbridgeOneOut
+| bhi + bbbridgeFour ->{rt} bhi + bbbridgeZeroOut
+
+| bbcZeroOut + bbbridgeOneOut ->{rt} bbcZeroOut + bbbridgeTwo
+| bbcZeroOut + bbbridgeTwo ->{rt} bbcZeroOut + bbbridgeOne  
+| bbcOneOut  + bbbridgeZeroOut ->{rt} bbcOneOut + bbbridgeFour
+| bbcOneOut  + bbbridgeFour ->{rt} bbcOneOut + bbbridgeThree
+
+| cccOneOut +  ccbridgeOne ->{rt} cccOneOut + ccbridgeTwo
+| cccZeroOut + ccbridgeThree ->{rt} cccZeroOut + ccbridgeFour
+| chi + ccbridgeTwo ->{rt} chi + ccbridgeOneOut
+| chi + ccbridgeFour ->{rt} chi + ccbridgeZeroOut
+
+| cccZeroOut + ccbridgeOneOut ->{rt} cccZeroOut + ccbridgeTwo
+| cccZeroOut + ccbridgeTwo ->{rt} cccZeroOut + ccbridgeOne  
+| cccOneOut  + ccbridgeZeroOut ->{rt} cccOneOut + ccbridgeFour
+| cccOneOut  + ccbridgeFour ->{rt} cccOneOut + ccbridgeThree
+
+//XOR1
+//reactions
+| aaaOneIn + aaxorOnelFour  ->{rt} aaaOneIn +  aaxorOneHi
+| aabOneIn + aaxorOnelFour ->{rt}  aabOneIn +  aaxorOneHi
+
+| aaaZeroIn + aaxorOnelThree ->{rt} aaaZeroIn + aaxorOnelFour
+| aabZeroIn + aaxorOnelThree ->{rt} aabZeroIn + aaxorOnelFour
+
+| aaaOneIn + aaxorOnelTwo ->{rt} aaaOneIn + aaaxorOneLone 
+| aabZeroIn + aaxorOnelTwo ->{rt} aabZeroIn + aaaxorOneLone
+
+| aabOneIn + aaaxorOneLone ->{rt} aabOneIn + aaxorOneLo
+| aaaZeroIn + aaaxorOneLone ->{rt} aaaZeroIn + aaxorOneLo
+
+
+//for persistance
+
+| aaxorOneLo + aaxorOnelFour ->{rt} aaxorOneLo + aaxorOnelThree
+| aaxorOneLo + aaxorOneHi ->{rt} aaxorOneLo + aaxorOnelFour
+
+| aaxorOneHi + aaaxorOneLone->{rt} aaxorOneHi + aaxorOnelTwo
+| aaxorOneHi + aaxorOneLo ->{rt} aaxorOneHi + aaaxorOneLone
+
+
+//XOR2
+
+| aaxorOneHi + aaxorTwolFour  ->{rt} aaxorOneHi +  aasOneOut
+| aacOneIn + aaxorTwolFour ->{rt}  aacOneIn +  aasOneOut
+
+| aaxorOneLo + aaxorTwolThree ->{rt} aaxorOneLo + aaxorTwolFour
+| aacZeroIn + aaxorTwolThree ->{rt} aacZeroIn + aaxorTwolFour
+
+| aaxorOneHi + aaxorTwolTwo ->{rt} aaxorOneHi + aaxorTwolOne 
+| aacZeroIn + aaxorTwolTwo ->{rt} aacZeroIn + aaxorTwolOne
+
+| aacOneIn + aaxorTwolOne ->{rt} aacOneIn + aasZeroOut
+| aaxorOneLo + aaxorTwolOne ->{rt} aaxorOneLo + aasZeroOut
+
+
+//for persistance
+
+| aasZeroOut + aaxorTwolFour ->{rt} aasZeroOut + aaxorTwolThree
+| aasZeroOut + aasOneOut ->{rt} aasZeroOut + aaxorTwolFour
+
+| aasOneOut + aasZeroOut ->{rt} aasOneOut + aaxorTwolTwo
+| aasOneOut + aasZeroOut ->{rt} aasOneOut + aasZeroOut
+
+
+//AND1
+//reactions
+
+|aaaOneIn + aaandOnelq ->{rt} aaaOneIn + aaandOneHi
+|aabOneIn + aaandOnelw ->{rt} aabOneIn + aaandOnelq
+
+|aaaZeroIn + aaandOnele ->{rt} aaaZeroIn + aaandOneLo
+|aabZeroIn + aaandOnele ->{rt} aabZeroIn + aaandOneLo
+
+//for persistance
+
+| aaandOneHi + aaaZeroIn ->{rt} aaandOnelq + aaaZeroIn
+| aaandOneHi + aabZeroIn ->{rt} aaandOnelw + aabZeroIn
+
+| aaandOneLo + aaandOneHi ->{rt} aaandOneHi + aaandOnele
+
+//AND2
+
+//reactions
+
+|aacOneIn + aaandTwole ->{rt} aacOneIn + aaandTwoHi
+|aaxorOneHi + aaandTwolw ->{rt} aaxorOneHi + aaandTwole
+
+|aacZeroIn + aaandTwolq ->{rt} aacZeroIn + aaandTwoLo
+|aaxorOneLo + aaandTwolq ->{rt} aaxorOneLo + aaandTwoLo
+
+//for persistance
+
+|aaandTwoHi + aacZeroIn ->{rt} aaandTwole + aacZeroIn
+|aaandTwoHi + aaxorOneLo ->{rt} aaandTwolw + aaxorOneLo
+
+|aaandTwoLo + aaandTwoHi ->{rt} aaandTwoHi + aaandTwolq
+
+
+//OR
+
+| aaandOneHi + aaorle ->{rt} aaandOneHi + aacOneOut
+| aaandTwoHi + aaorle ->{rt} aaandTwoHi + aacOneOut
+
+| aaandOneLo + aaorlw ->{rt} aaandOneLo + aaorlq
+| aaandTwoLo + aaorlq ->{rt} aaandTwoLo + aacZeroOut
+
+
+//for persistance
+| aacZeroOut + aaandOneHi ->{rt} aaorlw + aaandOneHi
+| aacZeroOut + aaandTwoHi ->{rt} aaorlq + aaandTwoHi
+| aacZeroOut + aaacOneOut ->{rt} aacZeroOut + aaorle
+
+
+//XOR1
+//reactions
+| bbaOneIn + bbxorOnelFour  ->{rt} bbaOneIn +  bbxorOneHi
+| bbbOneIn + bbxorOnelFour ->{rt}  bbbOneIn +  bbxorOneHi
+
+| bbaZeroIn + bbxorOnelThree ->{rt} bbaZeroIn + bbxorOnelFour
+| bbbZeroIn + bbxorOnelThree ->{rt} bbbZeroIn + bbxorOnelFour
+
+| bbaOneIn + bbxorOnelTwo ->{rt} bbaOneIn + bbaxorOneLone 
+| bbbZeroIn + bbxorOnelTwo ->{rt} bbbZeroIn + bbaxorOneLone
+
+| bbbOneIn + bbaxorOneLone ->{rt} bbbOneIn + bbxorOneLo
+| bbaZeroIn + bbaxorOneLone ->{rt} bbaZeroIn + bbxorOneLo
+
+
+//for persistance
+
+| bbxorOneLo + bbxorOnelFour ->{rt} bbxorOneLo + bbxorOnelThree
+| bbxorOneLo + bbxorOneHi ->{rt} bbxorOneLo + bbxorOnelFour
+
+| bbxorOneHi + bbaxorOneLone->{rt} bbxorOneHi + bbxorOnelTwo
+| bbxorOneHi + bbxorOneLo ->{rt} bbxorOneHi + bbaxorOneLone
+
+
+//XOR2
+
+| bbxorOneHi + bbxorTwolFour  ->{rt} bbxorOneHi +  bbsOneOut
+| aabridgeOneOut + bbxorTwolFour ->{rt}  aabridgeOneOut +  bbsOneOut
+
+| bbxorOneLo + bbxorTwolThree ->{rt} bbxorOneLo + bbxorTwolFour
+| aabridgeZeroOut + bbxorTwolThree ->{rt} aabridgeZeroOut + bbxorTwolFour
+
+| bbxorOneHi + bbxorTwolTwo ->{rt} bbxorOneHi + bbxorTwolOne 
+| aabridgeZeroOut + bbxorTwolTwo ->{rt} aabridgeZeroOut + bbxorTwolOne
+
+| aabridgeOneOut + bbxorTwolOne ->{rt} aabridgeOneOut + bbsZeroOut
+| bbxorOneLo + bbxorTwolOne ->{rt} bbxorOneLo + bbsZeroOut
+
+
+//for persistance
+
+| bbsZeroOut + bbxorTwolFour ->{rt} bbsZeroOut + bbxorTwolThree
+| bbsZeroOut + bbsOneOut ->{rt} bbsZeroOut + bbxorTwolFour
+
+| bbsOneOut + bbsZeroOut ->{rt} bbsOneOut + bbxorTwolTwo
+| bbsOneOut + bbsZeroOut ->{rt} bbsOneOut + bbsZeroOut
+
+
+//AND1
+//reactions
+
+|bbaOneIn + bbandOnelq ->{rt} bbaOneIn + bbandOneHi
+|bbbOneIn + bbandOnelw ->{rt} bbbOneIn + bbandOnelq
+
+|bbaZeroIn + bbandOnele ->{rt} bbaZeroIn + bbandOneLo
+|bbbZeroIn + bbandOnele ->{rt} bbbZeroIn + bbandOneLo
+
+//for persistance
+
+| bbandOneHi + bbaZeroIn ->{rt} bbandOnelq + bbaZeroIn
+| bbandOneHi + bbbZeroIn ->{rt} bbandOnelw + bbbZeroIn
+
+| bbandOneLo + bbandOneHi ->{rt} bbandOneHi + bbandOnele
+
+//AND2
+
+//reactions
+
+|aabridgeOneOut + bbandTwole ->{rt} aabridgeOneOut + bbandTwoHi
+|bbxorOneHi + bbandTwolw ->{rt} bbxorOneHi + bbandTwole
+
+|aabridgeZeroOut + bbandTwolq ->{rt} aabridgeZeroOut + bbandTwoLo
+|bbxorOneLo + bbandTwolq ->{rt} bbxorOneLo + bbandTwoLo
+
+//for persistance
+
+|bbandTwoHi + aabridgeZeroOut ->{rt} bbandTwole + aabridgeZeroOut
+|bbandTwoHi + bbxorOneLo ->{rt} bbandTwolw + bbxorOneLo
+
+|bbandTwoLo + bbandTwoHi ->{rt} bbandTwoHi + bbandTwolq
+
+
+//OR
+
+| bbandOneHi + bborle ->{rt} bbandOneHi + bbcOneOut
+| bbandTwoHi + bborle ->{rt} bbandTwoHi + bbcOneOut
+
+| bbandOneLo + bborlw ->{rt} bbandOneLo + bborlq
+| bbandTwoLo + bborlq ->{rt} bbandTwoLo + bbcZeroOut
+
+
+//for persistance
+| bbcZeroOut + bbandOneHi ->{rt} bborlw + bbandOneHi
+| bbcZeroOut + bbandTwoHi ->{rt} bborlq + bbandTwoHi
+| bbcZeroOut + bbacOneOut ->{rt} bbcZeroOut + bborle
+
+
+//XOR1
+//reactions
+| ccaOneIn + ccxorOnelFour  ->{rt} ccaOneIn +  ccxorOneHi
+| ccbOneIn + ccxorOnelFour ->{rt}  ccbOneIn +  ccxorOneHi
+
+| ccaZeroIn + ccxorOnelThree ->{rt} ccaZeroIn + ccxorOnelFour
+| ccbZeroIn + ccxorOnelThree ->{rt} ccbZeroIn + ccxorOnelFour
+
+| ccaOneIn + ccxorOnelTwo ->{rt} ccaOneIn + ccaxorOneLone 
+| ccbZeroIn + ccxorOnelTwo ->{rt} ccbZeroIn + ccaxorOneLone
+
+| ccbOneIn + ccaxorOneLone ->{rt} ccbOneIn + ccxorOneLo
+| ccaZeroIn + ccaxorOneLone ->{rt} ccaZeroIn + ccxorOneLo
+
+
+//for persistance
+
+| ccxorOneLo + ccxorOnelFour ->{rt} ccxorOneLo + ccxorOnelThree
+| ccxorOneLo + ccxorOneHi ->{rt} ccxorOneLo + ccxorOnelFour
+
+| ccxorOneHi + ccaxorOneLone->{rt} ccxorOneHi + ccxorOnelTwo
+| ccxorOneHi + ccxorOneLo ->{rt} ccxorOneHi + ccaxorOneLone
+
+
+//XOR2
+
+| ccxorOneHi + ccxorTwolFour  ->{rt} ccxorOneHi +  ccsOneOut
+| bbbridgeOneOut + ccxorTwolFour ->{rt}  bbbridgeOneOut +  ccsOneOut
+
+| ccxorOneLo + ccxorTwolThree ->{rt} ccxorOneLo + ccxorTwolFour
+| bbbridgeZeroOut + ccxorTwolThree ->{rt} bbbridgeZeroOut + ccxorTwolFour
+
+| ccxorOneHi + ccxorTwolTwo ->{rt} ccxorOneHi + ccxorTwolOne 
+| bbbridgeZeroOut + ccxorTwolTwo ->{rt} bbbridgeZeroOut + ccxorTwolOne
+
+| bbbridgeOneOut + ccxorTwolOne ->{rt} bbbridgeOneOut + ccsZeroOut
+| ccxorOneLo + ccxorTwolOne ->{rt} ccxorOneLo + ccsZeroOut
+
+
+//for persistance
+
+| ccsZeroOut + ccxorTwolFour ->{rt} ccsZeroOut + ccxorTwolThree
+| ccsZeroOut + ccsOneOut ->{rt} ccsZeroOut + ccxorTwolFour
+
+| ccsOneOut + ccsZeroOut ->{rt} ccsOneOut + ccxorTwolTwo
+| ccsOneOut + ccsZeroOut ->{rt} ccsOneOut + ccsZeroOut
+
+
+//AND1
+//reactions
+
+|ccaOneIn + ccandOnelq ->{rt} ccaOneIn + ccandOneHi
+|ccbOneIn + ccandOnelw ->{rt} ccbOneIn + ccandOnelq
+
+|ccaZeroIn + ccandOnele ->{rt} ccaZeroIn + ccandOneLo
+|ccbZeroIn + ccandOnele ->{rt} ccbZeroIn + ccandOneLo
+
+//for persistance
+
+| ccandOneHi + ccaZeroIn ->{rt} ccandOnelq + ccaZeroIn
+| ccandOneHi + ccbZeroIn ->{rt} ccandOnelw + ccbZeroIn
+
+| ccandOneLo + ccandOneHi ->{rt} ccandOneHi + ccandOnele
+
+//AND2
+
+//reactions
+
+|bbbridgeOneOut + ccandTwole ->{rt} bbbridgeOneOut + ccandTwoHi
+|ccxorOneHi + ccandTwolw ->{rt} ccxorOneHi + ccandTwole
+
+|bbbridgeZeroOut + ccandTwolq ->{rt} bbbridgeZeroOut + ccandTwoLo
+|ccxorOneLo + ccandTwolq ->{rt} ccxorOneLo + ccandTwoLo
+
+//for persistance
+
+|ccandTwoHi + bbbridgeZeroOut ->{rt} ccandTwole + bbbridgeZeroOut
+|ccandTwoHi + ccxorOneLo ->{rt} ccandTwolw + ccxorOneLo
+
+|ccandTwoLo + ccandTwoHi ->{rt} ccandTwoHi + ccandTwolq
+
+
+//OR
+
+| ccandOneHi + ccorle ->{rt} ccandOneHi + cccOneOut
+| ccandTwoHi + ccorle ->{rt} ccandTwoHi + cccOneOut
+
+| ccandOneLo + ccorlw ->{rt} ccandOneLo + ccorlq
+| ccandTwoLo + ccorlq ->{rt} ccandTwoLo + cccZeroOut
+
+
+//for persistance
+| cccZeroOut + ccandOneHi ->{rt} ccorlw + ccandOneHi
+| cccZeroOut + ccandTwoHi ->{rt} ccorlq + ccandTwoHi
+| cccZeroOut + ccacOneOut ->{rt} cccZeroOut + ccorle

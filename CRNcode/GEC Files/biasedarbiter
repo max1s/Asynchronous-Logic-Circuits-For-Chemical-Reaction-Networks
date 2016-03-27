@@ -1,0 +1,19 @@
+directive sample 10.0 100
+ 
+rate rt = 1.0;
+
+//INPUTS
+  init xlo 0.0
+| init xhi 5.0
+
+//OUTPUTS
+| init yhi 0.0
+| init ylo 5.0
+
+//REACTIONS
+
+| xhi + ylo ->{rt} xhi + yhi
+| xlo + yhi ->{rt} xlo + ylo
+//EITHER OR
+//| yhi + ylo ->{rt} yhi + yhi
+//| ylo + yhi ->{rt} ylo + ylo

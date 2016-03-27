@@ -1,0 +1,183 @@
+directive sample 20.0 100
+directive plot ahi;bhi;chi
+directive simulation deterministic
+rate rt = 1.0;
+ 
+ // C ELEMENTS
+ //AM SWITCH 1
+  init aup 0.0
+| init ant 0.0
+| init adn 10.0
+
+//AM SWITCH 2
+| init bup 0.0
+| init bnt 0.0
+| init bdn 10.0
+
+//AM SWITCH 3
+| init cup 0.0
+| init cnt 0.0
+| init cdn 10.0
+
+//AM SWITCH 4
+| init dup 0.0
+| init dnt 0.0
+| init ddn 10.0
+
+//AMP 1 
+| init ahi 0.0
+| init ab 10.0
+| init alo 0.0
+
+//AMP 2 
+| init bhi 0.0
+| init bb 10.0
+| init blo 0.0
+
+//AMP 3 
+| init chi 0.0
+| init cb 10.0
+| init clo 0.0
+
+//AMP 4 
+| init dhi 0.0
+| init db 10.0
+| init dlo 0.0
+
+//INPUTS 
+| init acchi 10.0
+| init acclo 0.0
+ 
+| init reqhi 10.0
+| init reqlo 0.0
+
+
+//NOT
+
+| init bNotUp 0.0
+| init bNotNt 10.0
+| init bNotDown 0.0
+
+| init cNotUp 0.0
+| init cNotNt 10.0
+| init cNotDown 0.0 
+
+| init dNotUp 0.0
+| init dNotNt 10.0
+| init dNotDown 0.0
+
+
+//AREA 1 
+| adn + aup ->{rt} ant + ant
+| ant + adn ->{rt} adn + adn
+| ant + aup ->{rt} aup + aup
+ 
+| adn + bNotUp ->{rt} ant + bNotUp
+| ant + reqhi ->{rt} aup + reqhi
+| aup + bNotDown->{rt} ant + bNotDown
+| ant + reqlo ->{rt} adn + reqlo
+ 
+//| alo + aup ->{rt} ahi + aup 
+//| ahi + adn ->{rt} alo + adn
+
+| alo + ahi ->{rt} ab + ab
+| ab + alo ->{rt}  alo + alo
+| ab + ahi ->{rt} ahi + ahi
+
+| adn + ahi ->{rt} adn + ab
+| adn + ab ->{rt}  adn + alo
+| aup + alo ->{rt} aup + ab
+| aup + ab ->{rt}  aup + ahi
+
+//AREA 2
+| bdn + bup ->{rt} bnt + bnt
+| bnt + bdn ->{rt} bdn + bdn
+| bnt + bup ->{rt} bup + bup
+
+| bdn + cNotUp ->{rt} bnt + cNotUp
+| bnt + ahi ->{rt} bup + ahi
+| bup + cNotDown ->{rt} bnt + cNotDown
+| bnt + alo ->{rt} bdn + alo
+ 
+//| blo + bup ->{rt} bhi + bup
+//| bhi + bdn ->{rt} blo + bdn
+
+| blo + bhi ->{rt} bb + bb
+| bb + blo ->{rt}  blo + blo
+| bb + bhi ->{rt}  bhi + bhi
+
+| bdn + bhi ->{rt} bdn + bb
+| bdn + bb ->{rt}  bdn + blo
+| bup + blo ->{rt} bup + bb
+| bup + bb ->{rt}  bup + bhi
+
+
+| bhi + bNotNt ->{rt} bhi + bNotDown
+| bhi + bNotUp ->{rt} bhi + bNotDown
+
+| blo + bNotNt ->{rt} blo + bNotUp
+| blo + bNotDown ->{rt} blo + bNotUp
+
+//AREA 3
+| cdn + cup ->{rt} cnt + cnt
+| cnt + cdn ->{rt} cdn + cdn
+| cnt + cup ->{rt} cup + cup
+
+| cdn + dNotUp ->{rt} cnt + dNotUp
+| cnt + bhi ->{rt} cup + bhi
+| cup + dNotDown ->{rt} cnt + dNotDown
+| cnt + blo ->{rt} cdn + blo
+ 
+//| clo + cup ->{rt} chi + cup
+//| chi + cdn ->{rt} clo + cdn
+
+| clo + chi ->{rt} cb + cb
+| cb + clo ->{rt}  clo + clo
+| cb + chi ->{rt}  chi + chi
+
+| cdn + chi ->{rt} cdn + cb
+| cdn + cb ->{rt}  cdn + clo
+| cup + clo ->{rt} cup + cb
+| cup + cb ->{rt}  cup + chi
+
+| chi + cNotNt ->{rt} chi + cNotDown
+| chi + cNotUp ->{rt} chi + cNotDown
+
+| clo + cNotNt ->{rt} clo + cNotUp
+| clo + cNotDown ->{rt} clo + cNotUp
+
+//| chi + reqhi ->{rt} chi + reqlo
+//| chi + acchi ->{rt} chi 
+
+//AREA 4
+| ddn + dup ->{rt} dnt + dnt
+| dnt + ddn ->{rt} ddn + ddn
+| dnt + dup ->{rt} dup + dup
+
+| ddn + acchi ->{rt} dnt + acchi
+| dnt + chi ->{rt} dup + chi
+| dup + acclo ->{rt} dnt + acclo
+| dnt + clo ->{rt} ddn + clo
+ 
+//| dlo + dup ->{rt} dhi + dup
+//| dhi + ddn ->{rt} dlo + ddn
+
+| dlo + dhi ->{rt} db + db
+| db + dlo ->{rt}  dlo + dlo
+| db + dhi ->{rt}  dhi + dhi
+
+| ddn + dhi ->{rt} ddn + db
+| ddn + db ->{rt}  ddn + dlo
+| dup + dlo ->{rt} dup + db
+| dup + db ->{rt}  dup + dhi
+
+| dhi + dNotNt ->{rt} dhi + dNotDown
+| dhi + dNotUp ->{rt} dhi + dNotDown
+
+| dlo + dNotNt ->{rt} dlo + dNotUp
+| dlo + dNotDown ->{rt} dlo + dNotUp
+
+| dhi + reqhi ->{rt} dhi + reqlo
+| dhi + acchi ->{rt} dhi + acclo
+| dlo + reqlo ->{rt} dlo + reqhi
+| dlo + acclo ->{rt} dlo + acchi

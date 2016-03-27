@@ -1,0 +1,37 @@
+directive sample 5.0 100
+directive simulation deterministic
+directive plot zhi;zmid;zlo
+ 
+rate rt = 1.0;
+ 
+  init zup 0.0
+| init znt 10.0
+| init zdn 0.0
+ 
+| init zhi 0.0
+| init zmid 10.0
+| init zlo 0.0
+ 
+| init xhi 10.0 
+| init xlo 0.0
+ 
+| init yhi 0.0
+| init ylo 10.0
+ 
+| zdn + zup ->{rt} znt + znt
+| znt + zdn ->{rt} zdn + zdn
+| znt + zup ->{rt} zup + zup
+ 
+| zdn + xhi ->{rt} znt + xhi
+| znt + yhi ->{rt} zup + yhi
+| zup + xlo ->{rt} znt + xlo
+| znt + ylo ->{rt} zdn + ylo
+
+| zlo + zhi ->{rt} zmid + zmid
+| zmid + zlo ->{rt}  zlo + zlo
+| zmid + zhi ->{rt} zhi + zhi
+
+| zdn + zhi ->{rt} zdn + zmid
+| zdn + zmid ->{rt}  zdn + zlo
+| zup + zlo ->{rt} zup + zmid
+| zup + zmid ->{rt}  zup + zhi

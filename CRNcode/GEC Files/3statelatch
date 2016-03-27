@@ -1,0 +1,31 @@
+directive sample 10.0 100
+directive simulation deterministic
+directive plot yhi;ylo;ymid;xhi
+
+ 
+rate rt = 1.0;
+
+
+  init ymid 10.0
+| init ylo 0.0
+| init yhi 0.0
+
+//INPUTS 
+| init xhi 10.0
+| init xlo 0.0
+| init rhi 0.0
+| init rlo 10.0
+
+| rlo ->{rt} rhi
+| xhi ->{rt}
+
+| yhi + ymid ->{rt} yhi + yhi
+| ylo + ymid ->{rt} ylo + ylo
+
+| xhi + ylo ->{rt} xhi + ymid
+| xhi + ymid ->{rt} xhi + yhi 
+| xlo + yhi ->{rt} xlo + ymid
+| xlo + ymid ->{rt} xlo + ylo
+
+| rhi + yhi ->{rt} rhi + ymid
+| rhi + ylo ->{rt} rhi + ymid

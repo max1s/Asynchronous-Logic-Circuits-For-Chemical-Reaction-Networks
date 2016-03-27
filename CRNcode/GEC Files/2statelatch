@@ -1,0 +1,19 @@
+directive sample 2.0 100
+directive simulation deterministic
+ 
+rate rt = 1.0;
+
+
+ init ylo 10.0
+| init yhi 0.0
+
+//INPUTS 
+| init xhi 10.0
+| init xlo 0.0
+
+
+| yhi + ylo ->{rt} yhi + yhi
+| ylo + yhi ->{rt} ylo + ylo
+
+| xhi + ylo ->{rt} xhi + yhi
+| xlo + yhi ->{rt} xlo + ylo
