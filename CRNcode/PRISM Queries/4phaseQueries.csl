@@ -1,8 +1,12 @@
+//Th is the threshold which is set to 7 usually because its half way between 5 (medium output species 5 high output species 10)
 const int Th;
 
+//is the second C-Element true present before output And-Gate-- s_id22 is second C-Element true - s_id35 is second AND-Gate
 P=? [ (s_id35<Th) U<=3 (s_id22>=Th) ]
 
+//is the second C-Elemenent false present before output And-Gate --- s_id24 is second C-Element false -- s_id35 is second ANd-Gate
 P=? [ (s_id35<Th) U<=3 (s_id24>=Th) ]
 
+//Does signal eventually propagate to the end? - s_id52 is the final And-Gate high species
 P=?[true U<=10 (s_id52>=Th)]
 

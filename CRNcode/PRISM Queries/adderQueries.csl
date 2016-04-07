@@ -1,3 +1,4 @@
+//Th is the threshold which is set to 7 usually because its half way between 5 (medium output species 5 high output species 10)
 const int Th;
 
 P=? [ true U<=10 (s_id96>=Th) ]

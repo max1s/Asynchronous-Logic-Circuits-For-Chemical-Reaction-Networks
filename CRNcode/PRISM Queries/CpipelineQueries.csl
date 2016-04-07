@@ -3,7 +3,7 @@ const int popMax;
 
 P=? [ (s_id15<Th) U<=8 (s_id12>Th) ]
 
-P=? [ true U<=5 (s_id3>=Th) ]
+P=? [ (s_id28<Th) U<=8 (s_id12>Th) ]
 
 P=? [ true U<=10 (s_id12>=popMax) ]
 
