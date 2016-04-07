@@ -1,0 +1,145 @@
+=======================================README======================================
+
+This is a readme for the results from the paper "" and is found at the following location: https://github.com/max1s/CRNcode
+
+
+====================================Microsoft GEC=========================================================
+
+Microsoft GEC tool is free to use and can be found online http://biology.azurewebsites.net/gec/beta/ (21/03/2016). 
+
+To use the tool click on the GEC tab and copy and paste one of the CRNs found within the folder GEC Files. 
+
+Click “simulate” to simulate the kinetics of the system. To change the inputs to the system change the molecular count of one of the input species. For instance to change the presence of yhi to ylo change the line:
+
+Yhi 10.0
+Ylo 0.0
+
+To:
+Yhi 0.0
+Ylo 10.0
+
+This means that we have 10 molecules of species ylo now instead of 10 molecules of yhi. To change which species are plotted change the parameter “plot”. For instance if we wished to track yhi,xhi then we would add the line:
+
+plot yhi;xhi
+
+To the second line of our program. Similarly we can change the type of simulation by changing the directive “simulation” to deterministic, stochastic and (on some future date) LNA. The top line refers to the number of samples so:
+
+Directive sample 5.0 1000
+
+Means 1000 samples over 5.0 seconds.
+
+For more information on how to use the GEC tool please refer to the operating manual:
+
+http://research.microsoft.com/en-us/projects/gec/manual.pdf (21/03/2016)
+
+Note: In a new patch to GEC a user may need to change the rate constant to a parameter. This is done by replacing the line “rate rt = 1.0;” to “parameters [rt = 1.0];”.
+
+======================================PRISM================================================
+
+PRISM is a free model checker and can be found at the following website:
+
+http://www.prismmodelchecker.org/
+
+All of the models used within the paper can be found in the folder PRISM files. 
+
+The overall structure of the file is as follows:
+
+Rate constants (e.g. const double k_r_id44 = 1.0;) – each reaction has an individual rate constant attached. All of our models operate under the same rate constants.
+
+Modules – Each chemical species has a module which determines its interaction with other modules/species. Within these modules we can change the initial molecule count for a species for instance we can change the line: s_id4 : [s_id4_MIN..s_id4_MAX] init 0 to: s_id4 : [s_id4_MIN..s_id4_MAX] init 10 which would mean that species s_id4 would have a starting condition of 10 molecules as apposed to 0.
+
+Once we have our file in PRISM we can check properties of this file by accessing the properties tab seen in the bottom left of the window. Properties allow us to to query our model.
+
+Querying the PRISM model
+We can create queries in the properties tab in PRISM seen below:
+
+In this tab we can write properties to query our model in CSL. More information on CSL can be found in the following paper: Adnan Aziz, Kumud Sanwal, Vigyan Singhal, and Robert Brayton. 2000. Model-checking continuous-time Markov chains. ACM Trans. Comput. Logic 1, 1 (July 2000), 162-170. DOI=http://dx.doi.org/10.1145/343369.343402
+
+A typical query might look like:
+
+P=? [ (true) U<=10 (s_id3>Th) ] – this means predicate until some other predicate. 
+
+Note that we have something called “s_id3”. This is because the conversion process to PRISM renames species according to their ordering. To use the correct molecular species refer back to the model tab. Find the molecule you want to query in the rewards, for instance ahi:
+
+// Species s_id12 (ahi)
+rewards "s_id12" true : s_id12; endrewards
+
+and find the corresponding ID number.
+
+Once you have your query right click and press Simulate to set up a simulation for your query. On the smaller files we can take 1000s of samples although on the larger ones this number is reduced to hundreds. A large amount of querying also depends on initial conditions. This can be changed directly in the model tab by changing the species count for an individual species. 
+
+
+For more information on the operation of PRISM:
+
+http://www.prismmodelchecker.org/manual/
+
+
+============================================================Visual DSD========================================================
+
+Microsoft Visual DSD is a free tool found at: http://boson.research.microsoft.com/webdna/ (21/03/2016).For more information please refer to: http://research.microsoft.com/en-us/projects/dna/manual.pdf (21/03/2016).
+
+We converted our models to DSD by a 2-domain implementation using the catalytic gate described in Cardelli’s paper:
+
+http://journals.cambridge.org/action/displayAbstract?fromPage=online&aid=8851390&fileId=S0960129512000102
+
+While this was not a large part of this project we have provided the necessary details below in order for the reader to confirm that this implementation would indeed work in DNA.
+
+ Our 2-Domain Catalytic gate translates to the following code in DSD:
+
+directive duration 5000.0 points 1000
+directive scale 1000.0
+def bind = 0.0003 (* /nM/s *)
+def unbind = 0.1126 (* /s *)
+new tx@bind,unbind
+new ty@bind,unbind
+ 
+//Catalytic Gate Cardelli 2-Domain Strand Displacement
+def C(N,x,y,z) =
+ new a new c 
+(  N * {t^*}[x t^]:[y t^]:[c]:[a t^]:[a] |
+    N * [x]:[t^ z]:[c]:[t^ y]:[t^ a]{t^*} 
+ | N * <t^ c a>
+ | N * <z v t^>)
+
+Because our motif is two catalytic reactions we can compose two of these gates to form our motif.Here is an example of how to use this code with our and-gate design for instance:
+
+def AND(N, xlo, xhi, ylo, yhi) =
+(
+    N * <zTwo t^ zTwo>
+  | N * <zOne t^ zOne>
+  | CN, zTwo, zThree, zlo, yhi)
+  | C(N, zThree, zhi, zlo, xhi)
+  | C(N, zlo, zOne, xlo, zhi)
+  | C(N, zlo, zOne, ylo, zhi)
+)
+(
+                  5 * <yhi t^ yhi>
+                | 5 * <xhi t^ xhi>
+                | AND(5, xlo, xhi, ylo, yhi)
+)
+As we can see the program is primarily a list of  of catalytic reactions.
+
+
+
+=============================CONVERTING CUSTOM MODELS FROM GEC TO PRISM =========================
+
+Unfortunately the parser fr GEC is broken (21/03/2016). We provide a fix to the parser below which is a python file:
+
+import sys
+import re
+
+
+inputfile = open(sys.argv[1])
+outputfile = open(inputfile.name + "fixed", 'w')
+for line in inputfile:
+    if re.search("\[(.)*\]\strue", line):
+      match = re.search("\(.*\)", line)
+        newline = line.replace("true", match.group(0) + " > 0", 1)
+        outputfile.write(newline)
+    else:
+      outputfile.write(line)
+print "done"
+
+
+This file can be downloaded directly from the repository. This file takes in the PRISM export file and produces a new file called __filename__fixed. With this file we can use this in the main PRISM window. Opening a PRISM file in this window might look something like this:
+
